@@ -182,5 +182,6 @@ public class ParallelSchedulingExample {
 
    link : [dev-java](https://www.javadevjournal.com/spring-boot/spring-boot-scheduler/)
 
-## TOMCAT Stored file
-[link](https://serverfault.com/questions/143667/how-to-access-a-simple-file-or-folder-from-tomcat-webapps-folder)
+## SIMPLE COMPILE
+* `javac Hello-world.java`
+* `java Simple` --> nama Class
