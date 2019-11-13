@@ -185,3 +185,7 @@ public class ParallelSchedulingExample {
 ## SIMPLE COMPILE
 * `javac Hello-world.java`
 * `java Simple` --> nama Class
+
+
+## OAUTH 
+[link](https://dzone.com/articles/build-an-oauth-20-authorization-server-with-spring)
