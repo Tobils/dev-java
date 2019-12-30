@@ -5,6 +5,7 @@ tag line : **Ngoding java mulai hari ini.**
 <img src="./img/java-features.png">
 </p>
 
+link belajar java [link](https://drive.google.com/drive/folders/1RQAxXtPtTm_4Dad0ye-u1HmClTRq54m4)
 
 ## installasi
 * install jdk 11 LTE [make sure punya akun oracle, kalo belum ada silahkan buat]
