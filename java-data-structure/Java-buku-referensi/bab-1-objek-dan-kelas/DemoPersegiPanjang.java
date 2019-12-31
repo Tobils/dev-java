@@ -20,6 +20,5 @@ public class DemoPersegiPanjang
         System.out.println(String.format("lebar   : %g",lebar));
         System.out.println(String.format("panjang : %g",panjang));
         System.out.println(String.format("luas : %g",luas));
-        System.out.println("selesai");
     }
 }

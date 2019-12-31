@@ -20,9 +20,12 @@ tag line : **Ngoding java mulai hari ini.**
 
 2. Cara Compile
     1. java nama_file.java
-    -->atau
+    --> atau
     2. javac DemoPersegiPanjang.java
     3. java DemoPersegiPanjang
+    --> atau
+    1. pada vscode jalankan Command + shift + D
+    2. pilih run with java
 
 3. Error 
     1. `Error: Could not find or load main class`
@@ -35,6 +38,12 @@ tag line : **Ngoding java mulai hari ini.**
 
 ## 3. Springboot
 [next level of java with Springboot](java-springboot/readme.md)
+
+
+## 4. Sumber belajar
+[tutorialspoint](https://www.tutorialspoint.com/java/)
+[Java referensi bagi Programmer]()
+[w3school]()
 
 
 

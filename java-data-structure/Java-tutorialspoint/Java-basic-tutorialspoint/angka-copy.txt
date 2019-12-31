@@ -18,3 +18,7 @@
 -1158796258
 -667359590
 470709840
+
+man jadda wa jada
+
+tambahan dengan mengganti stream dengan reader.
