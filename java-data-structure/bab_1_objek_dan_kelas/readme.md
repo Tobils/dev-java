@@ -1,7 +1,7 @@
 # BAB 1. KELAS DAN OBJECT
 
 
-### Day 1 31-12-19
+# Day-1 #100DaysOfCode 31-12-19
 ## Object
 ```txt
 object --> mempunyai tugas/fungsi/method 
@@ -24,8 +24,7 @@ kita dapat menganalogikan bahwa komponen dari mobil tersebut sebagai method dari
 ## Variable Primitif versus Object
 ```txt
 Variable primitif --> deklarasi suatu variabel dengan tipe data tertentu seperti : byte, short, int, long, char, float, double dan boolean
-Object -->  
-``` 
+Object --> deklarasi object class
 
 You can use these Format Specifiers for different data types
 * %c or %C Display characters
@@ -48,3 +47,7 @@ You can use whitespace characters which are
 * carriage return ( '\r' )
 * newline ( '\n' )
 * ormfeed ( '\f' )
+``` 
+
+
+[<< back](../readme.md)
