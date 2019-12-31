@@ -26,3 +26,25 @@ kita dapat menganalogikan bahwa komponen dari mobil tersebut sebagai method dari
 Variable primitif --> deklarasi suatu variabel dengan tipe data tertentu seperti : byte, short, int, long, char, float, double dan boolean
 Object -->  
 ``` 
+
+You can use these Format Specifiers for different data types
+* %c or %C Display characters
+* %d Displays a decimal (base 10 ) integer
+* %e or %E Display a floating point number in exponential notation
+* %f Display a floating point value in decimal format
+* %s or %S Display Strings
+* %b or %B Display boolean values
+* %g (%G) float or double use %f or %e as required
+* %o int unsigned octal value
+* %p pointer address stored in pointer
+* %s array of char sequence of characters or String
+* %u int unsigned decimal
+* %x (%X) int unsigned hex value
+* %% Display a % sign
+
+You can use whitespace characters which are
+* space ( ' ' )
+* tab ( '\t' )
+* carriage return ( '\r' )
+* newline ( '\n' )
+* ormfeed ( '\f' )
