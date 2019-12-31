@@ -5,4 +5,4 @@ memahami dan menguasai struktur data menggunakan pemrograman JAVA agar memudahka
 [BAB 1. OBJEK DAN KELAS](bab_1_objek_dan_kelas/readme.md)
 
 
-[<< back](../readme.md)
+[<< back](../README.md)
