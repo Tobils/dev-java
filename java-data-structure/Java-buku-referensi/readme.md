@@ -2,7 +2,7 @@
 Tujuan :
 memahami dan menguasai struktur data menggunakan pemrograman JAVA agar memudahkan pemahaman dalam implementasi ke springboot, android.
 
-[BAB 1. OBJEK DAN KELAS](/Java-buku-referensi/bab-1-objek-dan-kelas/readme.md)
+[BAB 1. OBJEK DAN KELAS](bab-1-objek-dan-kelas/readme.md)
 
 
 [<< back](../README.md)
