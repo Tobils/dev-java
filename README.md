@@ -31,7 +31,7 @@ tag line : **Ngoding java mulai hari ini.**
 ```
 
 ## 2. #100DaysOfCode
-[bejalar pemrograman java basic](java-data-structure/readme.md)
+[belajar strukture data menggunakan java](java-data-structure/readme.md)
 
 ## 3. Springboot
 [next level of java with Springboot](java-springboot/readme.md)
