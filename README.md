@@ -34,10 +34,14 @@ tag line : **Ngoding java mulai hari ini.**
 ```
 
 ## 2. #100DaysOfCode
-[belajar strukture data menggunakan java](java-data-structure/readme.md)
+[#100DayOfCode](java-data-structure/readme.md)
 
-## 3. Springboot
+## 3. Android
+[Implementation of java to android](#)
+
+## 4. Springboot
 [next level of java with Springboot](java-springboot/readme.md)
+
 
 
 ## 4. Sumber belajar

@@ -1,6 +1,6 @@
 # Belajar Java dari web tutorialspoint
 
-# Day-1 #100DaysOfCode 31-12-19
+# Day 1 #100DaysOfCode 31-12-19
 
 hari ini mempelajari pemrograman meliputi :
 ```txt
