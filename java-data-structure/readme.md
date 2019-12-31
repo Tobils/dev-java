@@ -13,3 +13,6 @@ memahami dan menguasai struktur data menggunakan pemrograman JAVA agar memudahka
 * `Error: Could not find or load main class`
 * solusi --> [link](https://stackoverflow.com/questions/18093928/what-does-could-not-find-or-load-main-class-mean)
 * pastikan berada pada path yang benar
+
+
+[<< back](../readme.md)

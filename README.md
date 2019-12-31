@@ -5,30 +5,24 @@ tag line : **Ngoding java mulai hari ini.**
 <img src="./img/java-features.png">
 </p>
 
-link belajar java [link](https://drive.google.com/drive/folders/1RQAxXtPtTm_4Dad0ye-u1HmClTRq54m4)
-
-## installasi
-* install jdk 11 LTE [make sure punya akun oracle, kalo belum ada silahkan buat]
-* cek : `java --version` --> output : 
+## 1. Installasi
+```txt
+1. install jdk 11 LTE [make sure punya akun oracle, kalo belum ada silahkan buat]
+2. cek : `java --version` --> output : 
     ```java 11.0.5 2019-10-15 LTS
     Java(TM) SE Runtime Environment 18.9 (build 11.0.5+10-LTS)
     Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.5+10-LTS, mixed mode)
     ```
-* install intellij IDEA
+3. install intellij IDEA
 
-## course java dari Elga
-* using spring
-* [client-side]<-->[server-side]<-->[server-side-logic]<-->[database]
-* learn both JAVA EE and Spring
+atau dapat menggunakan extension pada VSCode
+```
 
-* why Spring ? --> Simplify Java Enterprise Development.
-* Goal of Spring :
-   * LighWeight of JAVA POJOs (Plain-Old-Java-Objects)
-   * Dependency injection to promote loose coupling.
-   * Declarative programming with Aspect-Oriented-Programming (AOP) 
-   * Minimaze boilerplate Java Code.
+## 2. #100DaysOfCode
+[bejalar pemrograman java basic](java-data-structure/readme.md)
 
-## LIST LEARNING
-1. [Springboot-Basic](./Springboot-basic/readme.md)
-2. [Springboot-OAuth2](./Springboot-oauth/readme.md)
-3. [Springboot-Mongodb](./Springboot-mongodb/readme.md)
+## 3. Springboot
+[next level of java with Springboot](java-springboot/readme.md)
+
+
+
