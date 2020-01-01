@@ -82,8 +82,8 @@ bagaimana mendefinisikan konstruktor di java ?
     ```
 * resume
     ```txt
-        saat membuat konstruktor kta tidak perlu menggunakan void cukup dengan public name_class. 
-        nama konstruktor sama persis dengan nama kelas.
+    saat membuat konstruktor kta tidak perlu menggunakan void cukup dengan public name_class. 
+    nama konstruktor sama persis dengan nama kelas.
     ```
 
 1. Implementasi Konstruktor 1 [TeleponSeluler.java]
@@ -96,13 +96,13 @@ bagaimana mendefinisikan konstruktor di java ?
     Pada program dadu.java, sebuah kontrukto dadu menerima masukan berupa nilai jumlah_sisi yang akan digunakn untuk mendefinisikan jumlah sisi yang digunakan oleh dadu.
     ```
 ## Melewatkan Objek sebagai Argumen
-    ```txt
+   ```txt
     KONSEP : ketika sebuah object dilewatkan sebagai sebuah argumen pada sbeuah methode, akibatnya alamat object tsb dilewatkan kepada variable parameter dari methode tsb.
     sehingga paramater itu mereferensi object.
     Implementasi untuk melewatkan suatu object class sebagai sebuah parameter seuatu method dapat dilihat pada ArgumenDadu.java
 
     ketika kita melewatkan object sebagai parameter suatu method, hasilnya parameter akan mereferensi objek dan method yang bersangkutan dapat memiliki akses terhadap objek tersebut.
-    ```
+   ```
 
 * Cho-Han
     ```txt
@@ -169,5 +169,42 @@ bagaimana mendefinisikan konstruktor di java ?
       1. Random -> java.util.Random --> untuk generate nilai random.
       2. Scanner -> java.util.Scanner --> untuk memperoleh input nama user dari keyboard.
    ```
+
+* Pembebanan Metode dan Konstruktor
+    ```txt
+    KONSEP : 
+    Dua atau lebih metode di dalam suatu kelas dapat memiliki nama yang sama sepanjang daftar parameternya berbeda. ini juga berlaku untuk konstruktor.
+    ```
+    - contoh sebuah kelas mempunyai dua metode yang sama.
+        ```java
+        public int tambah(int nil1, int nil2)
+        {
+            int jum = nil1 + nil2;
+            return jum;
+        }
+        ```
+        ```java
+        public String tambah(String str1, String str2)
+        {
+            String gabungan = str1 + str2;
+            return gabungan;
+        }
+        ```
+    - Implementasi
+        ```txt
+        UML Kelas AkunBank
+        - saldo : double
+        + AkunBank()
+        + AkunBank(saldoAwal : double)
+        + AkunBank(str : String)
+        + tabung(jumlah : double) : void
+        + tabung(str : String) : void
+        + tarik(jumlah : double) : void
+        + tarik(str : String) : void
+        + setSaldo(b : double) : void
+        + setSaldo(str : String) : void
+        + getSaldo() : double
+        ```
+
 
 [<< back](../readme.md)
