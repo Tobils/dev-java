@@ -24,7 +24,7 @@ public class Pemain
         Random acak = new Random();
 
         int nilaiTebakan = acak.nextInt(2);
-        if(nilaiTebakan = 0)
+        if(nilaiTebakan == 0)
         {
             tebakan = "Cho (genap)";
         }else{
