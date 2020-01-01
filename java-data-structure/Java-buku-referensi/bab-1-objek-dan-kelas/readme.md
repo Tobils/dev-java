@@ -140,4 +140,34 @@ bagaimana mendefinisikan konstruktor di java ?
 
     ```
 
+# Day 3 #100DaysOfCode 02-01-2020
+* Implementasi ChoHan 
+   ```txt
+    ChoHan :
+    - BABAK_MAKS : final int 5
+    - namaPemain1 : String
+    - namaPemain2 : String
+    + hasilBabak(Dealer dealer, Pemain pemain1, Pemain pemain2) : void
+    + periksaTebakan(Pemain pemain, Dealer dealer) : void
+    + tampilPemain(Pemain pemain1, Pemain pemain2) : void
+
+    -Implementasi
+    terdapat 4 class yang terlibat, yaitu :
+    1. class Dadu
+    2. class Dealer
+    3. class Pemain
+    4. class ChoHan
+
+    - Class Dadu merupakan kunci dari permain ini. Nilai keluaran dari 2 buah object dadu digunakan oleh Dealer/bandar untuk permainan ini.
+    - Class Dealer merupakan bandar yang menggunakan class Dadu sebagai alat permainannya.
+    - Class Pemain menentukan tebakan apakah Cho (genap) ataukah Han (ganjil).
+    - Class ChoHan merupakan main program yang mengimplementasikan class Dealer dan class Pemain.
+
+    Catatan :
+    - method/fungsi pada class ChoHan di definisikan di luar main program scope.
+    - java API yang digunakan :
+      1. Random -> java.util.Random --> untuk generate nilai random.
+      2. Scanner -> java.util.Scanner --> untuk memperoleh input nama user dari keyboard.
+   ```
+
 [<< back](../readme.md)
