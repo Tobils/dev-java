@@ -46,8 +46,8 @@ tag line : **Ngoding java mulai hari ini.**
 
 ## 4. Sumber belajar
 - [tutorialspoint](https://www.tutorialspoint.com/java/)
-- [Java referensi bagi Programmer]()
-- [w3school]()
+- [Java referensi bagi Programmer](#)
+- [w3school](#)
 
 
 
