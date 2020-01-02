@@ -28,7 +28,7 @@ tata cara penggunaan array, list dengan object yang terdiri dari multiple variab
             .....
         }
         ```
-    - implementasi
+    - implementasi basic
         - super class
             ```java
             // file Calculation.java
@@ -96,6 +96,58 @@ tata cara penggunaan array, list dengan object yang terdiri dari multiple variab
             tetapi kita dapat mengakses class addition dan substraction yang merupakan method parent My_Calculation
             yaitu class Calculation.
             ```
+    - Implementasi super keyword
+        - konsep
+            ```txt
+            - kata kunci super sama hal nya dengan kata kunci this. 
+            - digunakan untuk membedakan member/method dari super class dan sub class
+            - digunakan untuk memanggil konstruktor super class dari subclass
+            - digunakan di subclass inheritance
+            ```
+        - super class
+            ```java
+            // file Super_class.java
+            public class Super_class
+            {
+                int num = 20;
+
+                public void display()
+                {
+                    System.out.println("This is the display method of Super class");
+                }
+            }
+            ```
+        - sub class
+            ```java
+            // file Sub_class.java
+            public class Sub_class extends Super_class
+            {
+                int num = 10;
+
+                public void display()
+                {
+                    System.out.println("This is the display method of Sub class");
+                }
+
+                public void my_method()
+                {
+                    Sub_class sub = new Sub_class();
+                    sub.display(); // method from subclass
+                    super.display(); // method from super class
+                    System.out.println("num of subclass : " + sub.num);
+                    System.out.println("num of super class : " + super.num);
+                }
+            }
+            ```
+        - kesimpulan
+            ```txt
+            super digunakan untuk membedakan antara method super class dan subclass yang memiliki nama yang sama.
+            dapat digunakan untuk memanggil konstruktor superclass
+            apabila menggunakan super untuk memanggil konstruktor super class, maka konstruktor sub class akan terpengaruhi oleh konstruktor super class.
+            perhatikan konstruktor pada contoh untuk super class dan sub class.
+            ```
+
+
 
 
 
