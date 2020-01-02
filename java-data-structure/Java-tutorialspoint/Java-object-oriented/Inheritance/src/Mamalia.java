@@ -1,0 +1,1 @@
+public class Mamalia extends Animal {}

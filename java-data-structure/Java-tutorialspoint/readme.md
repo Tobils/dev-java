@@ -146,7 +146,63 @@ tata cara penggunaan array, list dengan object yang terdiri dari multiple variab
             apabila menggunakan super untuk memanggil konstruktor super class, maka konstruktor sub class akan terpengaruhi oleh konstruktor super class.
             perhatikan konstruktor pada contoh untuk super class dan sub class.
             ```
+    - catatan
+        1. single inheritance
+            ```java
+            // B -> A
+            public class A
+            {
+                ....
+            }
+            public class B extends A 
+            {
+                .....
+            }
+            ```
+        2. multi level inheritance
+            ```java
+            // C -> B -> A
+            public class A
+            {
+                .....
+            }
+            public class B extends A
+            {
+                .....
+            }
+            public class C extends B
+            {
+                .....
+            }
+            ```
+        3. hieararchical inheritance
+            ```java
+            // B -> A
+            // C -> A
+            public class A
+            {
+                .....
+            }
+            public class B extends A
+            {
+                ......
+            }
+            public class C extends A
+            ```
+        4. java not support multiple inheritance
 
+* Overriding
+    - konsep
+        ```txt
+        keuntungan overriding : subsclass dapat mengimplementasikan method-method pada super class.
+        ```
+    - Implemantasi
+        ```txt
+            pada class overiding.java, meskipun object d dalam tipe animal dan class dog. tapi class d dapat mengakses method move pada class Dog.
+            selama nama method sublass sama dengan nama method pada super class.
+        ```
+
+* Polymhorphism
 
 
 

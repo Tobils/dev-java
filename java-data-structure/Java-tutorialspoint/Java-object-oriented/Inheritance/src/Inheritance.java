@@ -26,5 +26,19 @@ public class Inheritance
         sub.my_method();
         System.out.println("--------------------");
         System.out.println();
+
+        /**
+         * IS-A Relationship
+         */
+        Animal a = new Animal();
+        Mamalia m = new Mamalia();
+        Reptil r = new Reptil();
+        Dog d = new Dog();
+        System.out.println("Inheritance : IS-A relationship");
+        System.out.println(m instanceof Animal);
+        System.out.println(d instanceof Animal);
+        System.out.println(r instanceof Animal);
+        System.out.println("--------------------");
+        System.out.println();       
     }
 }
