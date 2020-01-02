@@ -9,11 +9,13 @@ tag line : **Ngoding java mulai hari ini.**
 ```txt
 1. Installasi
     1. install jdk 11 LTE [make sure punya akun oracle, kalo belum ada silahkan buat]
-    2. cek : `java --version` --> output : 
-        ```java 11.0.5 2019-10-15 LTS
-        Java(TM) SE Runtime Environment 18.9 (build 11.0.5+10-LTS)
-        Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.5+10-LTS, mixed mode)
-        ```
+    2. cek : 
+        > java --version 
+        > output : 
+            11.0.5 2019-10-15 LTS
+            Java(TM) SE Runtime Environment 18.9 (build 11.0.5+10-LTS)
+            Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.5+10-LTS, mixed mode)
+    
     3. install intellij IDEA
 
     atau dapat menggunakan extension pada VSCode
