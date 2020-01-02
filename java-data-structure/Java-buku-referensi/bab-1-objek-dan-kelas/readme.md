@@ -1,7 +1,7 @@
 # BAB 1. KELAS DAN OBJECT
 
 
-# Day 1 #100DaysOfCode 31-12-19
+# Day 1 #100DaysOfCode 31-12-2019
 ## Object
 ```txt
 object --> mempunyai tugas/fungsi/method 

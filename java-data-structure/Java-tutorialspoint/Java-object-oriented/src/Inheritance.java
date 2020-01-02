@@ -1,6 +1,12 @@
-/**
- * Inheritance atau warisan/pewarisan
- * Inheritance dapat didefinisikan sebagai proses dimana suatu kelas dapat memperoleh property [metode dan bidang] dari pewarisnya atau parent class nya.
- * dengan menggunakan Inheritance kita dapat mengelola informasi secara hirarki.
- */
-
+public class Inheritance 
+{
+    public static void main(String[] args)
+    {
+        int x = 39;
+        int y = 9;
+        My_Calculation hitung = new My_Calculation();
+        hitung.addition(x, y);
+        hitung.substraction(x, y);
+        hitung.multiplication(x, y);
+    }
+}
