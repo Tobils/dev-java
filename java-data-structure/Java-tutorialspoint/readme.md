@@ -203,6 +203,54 @@ tata cara penggunaan array, list dengan object yang terdiri dari multiple variab
         ```
 
 * Polymhorphism
+    - konsep
+        ```txt
+        polymhorphism : kemampuan sebuah objek menjadi berbagai bentuk. polymhorphism banyak digunakan pada OOP saat referensi class parent
+        digunakan untuk mereferensi ke object sub class.
+        ```
+    - contoh
+        ```java
+        public interface Vegetarian();
+        public class Animal();
+        public class Deer extends Animal implements Vegetarian();
+
+        Deer d = new Deer(); // deer
+        Animal a = d; // animal
+        Vegetarian v = d; // vegetarian
+        Object o = d; // object
+        ```
+    - implementasi
+        ```txt
+        class Deer dapat dikatan sebagai polymhorphism karena memiliki banyak bentuk, diantaranya :
+        - Deer IS-A Animal
+        - Deer IS-A Vegetarian
+        - Deer IS-A Deer
+        - Deer IS-A Object
+        ```
+    - Contoh lebih lanjut.
+        ```txt
+        Kelas Employee
+        - name : String
+        - address : String
+        - number : int
+        + Employee (name : String, address : String, number : int)
+        + mailCheck() : void
+        + toString() : String
+        + getName() : String
+        + getAddress() : String
+        + setAddress(address : String) : void
+        + getNumber() : int
+
+        Kelas Salary
+        - salary : double
+        + Salary(name : String, address : String, number : int, salary : double)
+        + mailCheck() : void
+        + getSalary() : double
+        + setSalary(newsalary : double) 
+        + computePay() : double
+
+
+        ```
 
 
 
