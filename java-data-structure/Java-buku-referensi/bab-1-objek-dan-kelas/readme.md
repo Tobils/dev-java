@@ -170,7 +170,7 @@ bagaimana mendefinisikan konstruktor di java ?
       2. Scanner -> java.util.Scanner --> untuk memperoleh input nama user dari keyboard.
    ```
 
-* Pembebanan Metode dan Konstruktor
+* Pembebanan Metode dan Konstruktor.
     ```txt
     KONSEP : 
     Dua atau lebih metode di dalam suatu kelas dapat memiliki nama yang sama sepanjang daftar parameternya berbeda. ini juga berlaku untuk konstruktor.
@@ -206,5 +206,26 @@ bagaimana mendefinisikan konstruktor di java ?
         + getSaldo() : double
         ```
 
+* Compile Java dan output ditempatkan di Directory yang berbeda.
+    ```txt
+    misalkan sususan directory :
+    /java
+      /class
+      /src
+        /main.java
+    
+    main.java dicompile dengan cara :
+    > cd java/src
+    > javac -d ../class main.java
+
+    hasil dari class main.java disimpan pada directory class, sehingga susunan directorynya menjadi :
+    /java
+      /class
+        /main.class
+      /src
+        /main.java
+    ```
+
+* Akses kelas dari directory yang berbeda. 
 
 [<< back](../readme.md)
