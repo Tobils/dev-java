@@ -248,11 +248,120 @@ tata cara penggunaan array, list dengan object yang terdiri dari multiple variab
         + getSalary() : double
         + setSalary(newsalary : double) 
         + computePay() : double
-
-
         ```
+# Day 4 #100DaysOfCode 03-01-2020
+- melanjutkan Polymhorphism dan kelas Employee
+    ```txt
+    sesuai dengan kaidah makna dari Polymhorphism yaitu method pada suatu class dapat memiliki banyak bentuk. 
+    VirtualDemo.java merupakan contoh Polymhorphism dimana kita dapat merubah substansi dari method mailCheck() 
+    sub class tanpa harus merubah method di parent class.
+    ```
+- Abstraction
+    - konsep
+        ```txt
+        As per dictionary, abstraction is the quality of dealing with ideas rather than events. 
+        For example, when you consider the case of e-mail, complex details such as what happens as soon as you send an e-mail, 
+        the protocol your e-mail server uses are hidden from the user. 
+        Therefore, to send an e-mail you just need to type the content, mention the address of the receiver, and click send.
+        ```
+    - syntax
+        ```java
+        public abstract class Employee
+        {
+            .....
+        }
+        ```
+    - Implementasi
+        ```txt
+        kelas Employee
+        - name : String
+        - address : String
+        - number : int
+        + Employee(name : String, address : String, number : int) 
+        + computePay() : double
+        + mailCheck() : void
+        + toString() : String
+        + getName()  : String
+        + getAddress() : String
+        + setAddress(newAddress : String) : void
+        + getNumber() : int
 
+        kelas Salary
+        - salary : double
+        + Salary(name : String, address : String, number : int, salary : double)
+        + mailCheck() : void
+        + getSalary() : double
+        + setSalary(double newSalary) : void
+        + computePay() : double 
+        ```
+    - compile
+        - AbstractDemo.java
+            ```java
+            public class AbstractDemo
+            {
+                public static void main(String[] args) 
+                {
+                    Employee e = new Employee("tobil", "jogja", 123);
+                    e.mailCheck();    
+                }
+            }
+            ```
+        - error
+            ```java
+            AbstractDemo.java:5: error: Employee is abstract; cannot be instantiated
+            Employee e = new Employee("tobil", "jogja", 123);
+                        ^
+            1 error
+            ```
+        -  karena
+            ```txt
+            untuk meng-implementasikan abstract class kita harus melakukan dengan cara yang concrete.
+            ```
+        - solusi --> AbstractDemo.java
+            ```java
+            public class AbstractDemo
+            {
+                public static void main(String[] args) 
+                {
+                    Salary gajih_suhada  = new Salary("suhada", "cileungsi", 321, 15000.0);
+                    Employee pegawai_ade = new Salary("ade", "jogja", 123, 5000.0);
 
+                    System.out.println("call mailcheck using salary reference --");
+                    gajih_suhada.mailCheck();
+                    System.out.println("\ncall mailcheck using employee reference --");
+                    pegawai_ade.mailCheck();
+                }
+            }
+            ```
+        - output
+            ```txt
+            call mailcheck using salary reference --
+            inside of mailcheck salary class
+            Mailing check to suhada with salary 15000.0
+
+            call mailcheck using employee reference --
+            inside of mailcheck salary class
+            Mailing check to ade with salary 5000.0
+            ```
+- encapsulation
+    - konsep
+        ```txt
+        enkapsulasi merupakan fundamental ke-4 dari OOP. 3 lainnya adalah inheritance (pewarisan), polymhorphism (banyak bentuk) dan abstraction (makna).
+        enkapsulasi menutupi akses variable pada suatu kelas yang hanya dapat diakses oleh method di dalam kelas yang bersangkutan.
+        ```
+    - implementasi
+        ```txt
+        kelas EncapTest
+        - name : String
+        - idNum : String
+        - age : int
+        + setName(String newName) : void
+        + setIdNum(int newIdNum) : void
+        + setAge(int newAge) : void
+        + getName() : String
+        + getIdNum() : int
+        + getAge() : int
+        ```
 
 
 
