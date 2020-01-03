@@ -362,8 +362,54 @@ tata cara penggunaan array, list dengan object yang terdiri dari multiple variab
         + getIdNum() : int
         + getAge() : int
         ```
+- Interface
+    - konsep
+        ```txt
+        interface bersifat abtract sehingga kita tidak perlu menuliskan abstract pada interface.
+        ```
+    - implementasi
+        ```txt
+        Animal.java
+        + Animal() : interface
+        + eat() : void
+        + travel() : void
 
+        Mamalia.java
+        + eat() : void
+        + travel() : void
+        + noOfLegs() : int
 
+        IntarfaceDemo.java
+        + main()
+        ```
+    - contoh
+        ```java
+        /* File name : NameOfInterface.java */
+        import java.lang.*;
+        // Any number of import statements
+
+        public interface NameOfInterface 
+        {
+            // Any number of final, static fields
+            // Any number of abstract method declarations\
+        }
+        ```
+    - kesimpulan
+        ```txt
+        terdapat 2 fungsi dasar dari interface yaitu :
+        1. create a common parent
+        2. adds a data type to class
+        ```
+- Packages
+    - konsep
+        ```txt
+        lebih baik menggunakan lowercase saat mendefinisikan packages.
+        memudahkan dalam penempatan directory file java dan file .class hasil eksekusi program
+        agar tertata dengan rapih.
+        ```
+
+    - cara compile :
+    - blm selesai ...
 
 
 [<< back](../readme.md)
