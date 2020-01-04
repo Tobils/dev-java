@@ -1,10 +1,10 @@
-import animals.*;
+import animals.Mamalia;
 
 public class PackageDemo
 {
     public static void main(String[] args) {
-        Mamalia sapi = new Mamalia();
-        sapi.eat();
-        sapi.travel();
+        Mamalia m = new Mamalia();
+        m.eat();
+        m.travel();
     }
 }

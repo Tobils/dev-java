@@ -409,7 +409,73 @@ tata cara penggunaan array, list dengan object yang terdiri dari multiple variab
         ```
 
     - cara compile :
-    - blm selesai ...
+        ```
+        > javac -d . Animal.java
+        > javac -d . Mamalia.java
+        > javac -d . PackageDemo.java
+        > java PackageDemo
+        ```
+
+# Day 5 #100DaysOfCode 04-01-2020
+- Struktur Data - Java
+    ```
+    struktur data yang disediakan oleh utilitas java sangat bergguna dan memiliki cakupan yang sangat luas.
+    data struktur ini terdiri dari interface dan class sebagai berikut :
+    1. Enumeration
+    2. BitSet
+    3. Vector
+    4. Stack
+    5. Dictionary
+    6. Hash Table
+    7. Properies
+    ```
+- Enumeration
+    - konsep
+        ```
+        antar muka enumerasi sebenarnya bukanlah data struktur, tapi sangat berguna bagi stuktur data.
+        enumrasi mendefinisikan sebuah makna untuk mengambil elemen successive dari struktur data.
+
+        sebagai contoh :
+        enumerasi mendefinisikan sebuah method yang disebut dengan nextElement yang digunakan untuk mendapatkan
+        element selanjutnya di dalam sebuah struktur data yang terdiri dari beragam element. 
+
+        Enumeration interface mendefinisikan sebuah method dimana kita bisa meng enummerasi (mengambil satu pada suatu waktu) element pada kumpulan object. 
+        ```
+    - implementasi
+        ```java
+        import java.util.Vector;
+        import java.util.Enumeration;
+
+        public class Enum 
+        {
+            public void showData()
+            {
+                Enumeration days;
+                Vector dayNames = new Vector();
+
+                dayNames.add("Senin");
+                dayNames.add("Selasa");
+                dayNames.add("Rabu");
+                dayNames.add("Kamis");
+                dayNames.add("Jum'at");
+                dayNames.add("Sabtu");
+                dayNames.add("Minggu");
+
+                days = dayNames.elements();
+
+                while(days.hasMoreElements())
+                {
+                    System.out.println(days.nextElement());
+                }
+            }
+        }
+        ```
+    - pembahasan :
+        ```
+        Enumeration memiliki 2 method utama yang dapat digunakan :
+        - hasMoreElements() --> return true saat masih ada data yang bisa di esktrak, dan false saat data sudah di enumerasi semua.
+        - nextElement() --> return the next object
+        ```
 
 
 [<< back](../readme.md)
