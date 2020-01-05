@@ -741,5 +741,13 @@ bagaimana mendefinisikan konstruktor di java ?
         26. void xor(BitSet bitSet)
         ```
 
+# Day 7 #100DaysOfCode 06-01-2020
+- Vector
+    - konsep
+    ```
+    Vector : mengimplementasikan dynamic array. mirip dengan arrayList namun memiliki 2 perbedaan :
+        - vector bersifat syncronous
+        - vector berisi banyak metode lama yang bukan bagian dari framework collection.
+    ```
 
 [<< back](../readme.md)
