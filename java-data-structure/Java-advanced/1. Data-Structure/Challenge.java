@@ -12,7 +12,11 @@ public class Challenge
 
     public int getTotal()
     {
-        for(int i = 0; i < data.length; i++)
+        for(int dt : data)
+        {
+            System.out.print(dt + " ");
+        }
+        for(int i = 0; i < data.length-1; i++)
         {
             int tmp = 0;
             int j = i;
@@ -23,7 +27,6 @@ public class Challenge
                 if(tmp == k)
                 {
                     addTotal();
-                    break;
                 }
                 j++;
             }while(j < (data.length-1));

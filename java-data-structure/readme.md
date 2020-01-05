@@ -722,5 +722,24 @@ bagaimana mendefinisikan konstruktor di java ?
         + getTotal() : int
         + addTotal(newPoin : int) : void
         ```
+    - belum selesai
+
+# Day 6 #100DaysOfCode 05-01-2020
+- Bitset
+    - konsep
+        ```
+        BitSet : class bitset menyimpan tipe spesial dari array yang menyimpan nilai-nilai bit. nilai bitset dapat di increase sesuai kebutuhan.
+        hal ini mirip dengan bit-bit vector.
+
+        kontruktor :
+        1. BitSet()
+        2. BitSet(int Size)
+        
+        method (total ada 26 method) :
+        1. void and(BitSet bitSet)
+        ...
+        26. void xor(BitSet bitSet)
+        ```
+
 
 [<< back](../readme.md)

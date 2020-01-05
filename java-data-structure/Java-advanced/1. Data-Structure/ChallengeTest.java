@@ -6,7 +6,6 @@ public class ChallengeTest
 
         Challenge test = new Challenge(data, k);
 
-        System.out.println("data : " + data);
         System.err.println("k : " + k);
         System.out.println("total : " + test.getTotal());
     }
