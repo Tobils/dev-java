@@ -808,6 +808,38 @@ bagaimana mendefinisikan konstruktor di java ?
         Stack: []
         pop --> Stack is empty
         ```
-- 
+- Dictionary - Map
+    - konsep
+        ```txt
+        Maps merupakan antarmuka antara kata kunci dengan value. valua dapat diperoleh dengan menggunakan kata kunci.
+        ```
+    - implementasi
+        ```txt
+        Map element : {suhada=12, key=54}
+        get value of Map[suhada] : 12
+        key : [suhada, key]
+        ```
+- HashTable
+    - konsep
+        ```txt
+        Hashtable merupakan bagian asli dari java.util dan merupakan implementasi konkret ari sebuah dictionary.
+        seperti hal nya Hash/Map, Hashtable menyimpan key dengan value.
+        ```
+    - implementasi
+        ```txt
+        Qadir : -99.9
+        Mahnaz : 123.23
+        Daisy : 345.43
+        Aayan : 137.86
+        Zahra : 3434.34
+
+        new balance of zahra is 4434.34
+        ```
+- Properties
+    - konsep
+        ```
+            properties merupakan subclass dari hashtable, hanya saja value dari properties adalah string.
+        ```
+    - implementasi
 
 [<< back](../readme.md)
