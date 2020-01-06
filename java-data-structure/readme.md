@@ -749,5 +749,63 @@ bagaimana mendefinisikan konstruktor di java ?
         - vector bersifat syncronous
         - vector berisi banyak metode lama yang bukan bagian dari framework collection.
     ```
+    - implementasi
+    ```txt
+    Implementasi dapat dicheck pada file VectorData.java
+    ```
+- Stack
+    - konsep
+        ```txt
+        Stack merupakan subclass dari vector yang menerapkan standar last-in. first-out [FIFO]
+        stack hanya didefinisikan menggunakan defult konstruktor, yang membuat stack kosong. 
+        stack memiliki semua methode yang didefinisikan oleh vector, dan beberapa penambahan milik stack.
+        ```
+    - implementasi
+        ```txt
+        bash-3.2$ java StackDataDemo 
+        stack : []
+        push(0)
+        Stack: [0]
+        push(7)
+        Stack: [0, 7]
+        push(14)
+        Stack: [0, 7, 14]
+        push(21)
+        Stack: [0, 7, 14, 21]
+        push(28)
+        Stack: [0, 7, 14, 21, 28]
+        push(35)
+        Stack: [0, 7, 14, 21, 28, 35]
+        push(42)
+        Stack: [0, 7, 14, 21, 28, 35, 42]
+        push(49)
+        Stack: [0, 7, 14, 21, 28, 35, 42, 49]
+        push(56)
+        Stack: [0, 7, 14, 21, 28, 35, 42, 49, 56]
+        push(63)
+        Stack: [0, 7, 14, 21, 28, 35, 42, 49, 56, 63]
+        pop --> 63
+        Stack: [0, 7, 14, 21, 28, 35, 42, 49, 56]
+        pop --> 56
+        Stack: [0, 7, 14, 21, 28, 35, 42, 49]
+        pop --> 49
+        Stack: [0, 7, 14, 21, 28, 35, 42]
+        pop --> 42
+        Stack: [0, 7, 14, 21, 28, 35]
+        pop --> 35
+        Stack: [0, 7, 14, 21, 28]
+        pop --> 28
+        Stack: [0, 7, 14, 21]
+        pop --> 21
+        Stack: [0, 7, 14]
+        pop --> 14
+        Stack: [0, 7]
+        pop --> 7
+        Stack: [0]
+        pop --> 0
+        Stack: []
+        pop --> Stack is empty
+        ```
+
 
 [<< back](../readme.md)
