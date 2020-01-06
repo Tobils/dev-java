@@ -19,6 +19,12 @@ public class StackDataDemo
             demo_stack.showpush(st, i*7);
         }
 
+        demo_stack.search_element(st, 21);
+        demo_stack.search_element(st, 10);
+
+        demo_stack.getPeek(st);
+        demo_stack.showData(st);
+
         for(int j=0; j<10; j++)
         {
             demo_stack.showpop(st);

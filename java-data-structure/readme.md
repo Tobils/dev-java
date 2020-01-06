@@ -759,6 +759,8 @@ bagaimana mendefinisikan konstruktor di java ?
         Stack merupakan subclass dari vector yang menerapkan standar last-in. first-out [FIFO]
         stack hanya didefinisikan menggunakan defult konstruktor, yang membuat stack kosong. 
         stack memiliki semua methode yang didefinisikan oleh vector, dan beberapa penambahan milik stack.
+
+        stack ini mirip dengan tumpukaan, dapat dianalogikan sebagai tumpukan baju, baju terakhir yang ditumpuk merupakan baju pertama yg bisa diambil.
         ```
     - implementasi
         ```txt
@@ -806,6 +808,6 @@ bagaimana mendefinisikan konstruktor di java ?
         Stack: []
         pop --> Stack is empty
         ```
-
+- 
 
 [<< back](../readme.md)
