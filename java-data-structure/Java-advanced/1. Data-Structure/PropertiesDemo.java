@@ -25,8 +25,5 @@ public class PropertiesDemo
         }
 
         System.out.println();
-        
-        
-
     }
 }

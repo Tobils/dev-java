@@ -841,5 +841,33 @@ bagaimana mendefinisikan konstruktor di java ?
             properties merupakan subclass dari hashtable, hanya saja value dari properties adalah string.
         ```
     - implementasi
+        ```
+        Implementasi properties dapat dilihat pada file PropertiesDemo.java.
+        key dan value pada properties bernilai string. penambahan key dan value dilakukan menggunakan syntax : put
+        
+        Properties capitals = new Properties();
+        capitals.put("Ade", "Bantul");
+        capitals.put("Suhada", "Congcat");
+        capitals.put("Frika", "Cileungsi");
+        capitals.put("Atrika", "Kubang");
+
+        keys dari properties diperoleh menggunakan kata kunci keySet() dan disimpan dalam tipe data set.
+
+        output :
+        the Capital of Ade is Bantul
+        the Capital of Atrika is Kubang
+        the Capital of Suhada is Congcat
+        the Capital of Frika is Cileungsi
+        ```
+
+# Day 8 #100DaysOfCode 07-01-2020
+- Collection
+    - konsep
+        ```
+        1. framework collection di java memberikan akses kepada programmer untuk pre-package struktur data sebaik dengan algoritmanya untuk memanipulasi data.
+        2. sebuah collection merupakan sebuah preferensi yang dapat menyimpan object lain. antarmuka colection mendeklasikan sebuah operasi yang dapat bekerja pada setiap tipe collection.
+        3. class dan interface dari collection framework berada di package java.utl.*.
+        ```
+
 
 [<< back](../readme.md)
