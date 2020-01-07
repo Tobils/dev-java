@@ -1,22 +1,12 @@
 # Springboot
-## LIST LEARNING
-1. [Springboot-Basic](./Springboot-basic/readme.md)
-2. [Springboot-OAuth2](./Springboot-oauth/readme.md)
-3. [Springboot-Mongodb](./Springboot-mongodb/readme.md)
 
-[link belajar](https://www.journaldev.com/2888/spring-tutorial-spring-core-tutorial)
+- Perbedaan Maven dengan Grandle
+    ```
+    maven merupakan alat manajemen project dan perangkat pemahaman project yang mengelola pembuatan proyek,
+    laporan dan dokumen. 
+    semetara,
+    grandle merupakan alat otomatisasi pembangunan sumber terbuka yang berfokus pada fleksibilitas dan kinerja. 
+    ```
+    [detail](https://javaquantum.com/2019/10/16/mengenal-perbedaan-antara-maven-dan-gradle/)
 
-Daftar content belajar :
-1. Spring Core Tutorials
-2. Spring Annotations
-3. Spring Boot Tutorials
-4. Spring MVC Tutorial
-5. Spring Batch Tutorials
-6. Spring JDBC Tutorial
-7. Spring Hibernate Tutorial
-8. Spring security Tutorial
-9. Spring Integration Tutorial
-10. Spring Messaging
-11. Spring Interview Question 
-
-[<< back](../readme.md)
+[<< back](../readme.md) 
