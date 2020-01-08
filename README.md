@@ -939,8 +939,61 @@ bagaimana mendefinisikan konstruktor di java ?
         - membuat Greeting.java
         - membuat controller GrretingController.java
         - modify port dengan mengedit file application.properties --> server.port=9090
-          
+        - tambahkan extension SPRING-BOOT DASHBOARD
+        - open : localhost:9090/greeting atau localhost:9090/greeting?name=Suhada
+        - [link](https://spring.io/guides/gs/rest-service/)
+        - build execution file : 
+            ```
+            grandle : ./grandle bootRun atau membuat menjadi file jar ./grandle build
+            kemudian di running : java -jar build/libs/gs-rest-service-0.1.0.jar
+
+            maven : ./mvnw spring-boot:run atau membuat jd file jar dengan ./mvnw clean package
+            kemudian running : java -jar target/gs-rest-service-0.1.0.jar
+            ```
+        - implementasi : pada java-Springboot/suhada
+        - Pembahsan
+            ```
+            return yang ditampilkan oleh browser saat memanggil endpoint adalah get dari class yang bersangkutan.
+            saat memanggil endpoint "/" return dari browser adalah : {"id":23,"pesan":" Man Jadda wajada"}
+            saat memanggil enspoint "/greeting" return yang dihasilkan adalah ; {"id":24,"content":"Hello,  world"} 
+            ```
+
+
+# Day 9 #100DaysOfCode 08-01-2020   
+- Bab 2. Lanjut : Objek dan Kelas
+    - konsep
+        ```
+        2.1 anggota kelas statis
+            anggota kelas statis adalah milik dari kelas, bukan objek yang diinstasiasi dari kelas.
+        ```
+    - implementasi bidang statis : file Tercacahkan.java
+    - pembahasan :
+        ```
+            meskipun yang memanggil getCacahObjek dari tch yang merupakan objeck pertama, nilai cacah akan 
+            return banyaknya objek yang sudah diciptakan.
+        ```
+    - implementasi method statis : file Metrik.java dan MetrikDemo.java
+    - pembahasan :
+        ```
+        metode statis sangat cocok untuk banyak pekerjaan karena dapat dipanggil langsung dari kelas saat diperlukan.
+        metode statis digunakan untuk melukan operas-operasi data tanpa harus menyimpan data.
+
+        satu-satunya kekurangan : tidak dapat digunakan pada anggota tak statis.
+
+        ```
+
+
 
 [<< back](../readme.md)
 
 
+
+leon, we are now having 2 endpoint. one for production and the second one for development. 
+1. end-point for production
+    * https://api.umg-mm.com
+    * https://gateway-devices.umg-mm.com 
+2. end-point for development
+    * https://api-dev.umg-mm.com
+    * https://gateway-devices-dev.umg-mm.com
+
+could we please use the end-point for debug/development and move forward to end-point production when it's ready to production.

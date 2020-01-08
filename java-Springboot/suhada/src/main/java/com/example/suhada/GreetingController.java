@@ -1,10 +1,10 @@
 package com.example.suhada;
 
 import java.util.concurrent.atomic.AtomicLong;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @RestController
@@ -18,16 +18,16 @@ public class GreetingController
      * @param param
      * @return
      */
-    @RequestMapping(value="/greeting", method=RequestMethod.GET)
-    public Greeting greeting(@RequestParam(value="name", defaultValue = "wolrd") String name)
+    @GetMapping(path = "/greeting")
+    public Greeting greeting(@RequestParam(value="name", defaultValue = "world") String name)
     {
         System.out.println("/greeting");
         return new Greeting(String.format(template, name), counter.incrementAndGet());
     }
 
-   @RequestMapping(value="/", method=RequestMethod.GET)
-    public SomeData requestMethodName(@RequestParam String param) {
-        return new SomeData();
+    @GetMapping(path = "/")
+    public Root root()
+    {
+        return new Root(counter.incrementAndGet());
     }
-    )
 }
