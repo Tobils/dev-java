@@ -982,18 +982,48 @@ bagaimana mendefinisikan konstruktor di java ?
 
         ```
 
+- Spring oauth2
+    - flow diagram based on oracle
+    <p align="center">
+    <img src="./img/oauth_authorization_code.png">
+    </p>
+
+    - konsep
+        ```
+        ketika kita menggunakan OAuth2, maka kita seharusnya menggunakan 2 server, yaitu yang satu bertugas sebagai authorization server, dimana server ini yang akan memberikan hak akses kepada apilkasi pihak ketiga. 
+        Sedangkan server yang satu nya lagi sebagai resource server atau sebagai penyedia API.
+        artinya ada 2 endpoint yang disediakan.
+        ```
+        [Sumber](https://rizkimufrizal.github.io/belajar-oauth2/)
+    - implementasi [blm mulai implementasi]
 
 
+
+# Day 10 #100DaysOfCode 09-01-2020
+- nilai kembalian objecl dari sebuah method
+    - konsep
+        ```
+        membuat sebuah method yang memiliki nilai kembalian object.
+        ```
+    - implementasi
+        ```
+        implementasi dilakukan pada file objekDemo.java
+        nilai kembalian dari method getTercacahkan adalah objek Tercacahkan. 
+        sehingga ketika diulang 10 kali, akan ada 10 objek yang dibuat menggunakan method tsb.
+        ```
+- toString()
+    - konsep
+        ```
+        kebanyakan program menggunakan method toString yang secara implisit dipanggil pada kondisi tertentu.
+        umumnya, method ini digunakan untuk merepresentasikan status dari sebuah objek.
+        pada dasarnya, kita tidak perlu seacar explisit memanggil method toString().
+        ```
+    - implementasi
+        ```
+        file Saham.java dengan implementasi sahamDemo.java
+        secara otomatis ketika objek saham sudah diciptakan, maka saat kita println objek tsb, method toString() akan dipanggil.
+        ```
+- equals
+    - konsep
+    - implementasi
 [<< back](../readme.md)
-
-
-
-leon, we are now having 2 endpoint. one for production and the second one for development. 
-1. end-point for production
-    * https://api.umg-mm.com
-    * https://gateway-devices.umg-mm.com 
-2. end-point for development
-    * https://api-dev.umg-mm.com
-    * https://gateway-devices-dev.umg-mm.com
-
-could we please use the end-point for debug/development and move forward to end-point production when it's ready to production.
