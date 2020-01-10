@@ -1025,5 +1025,40 @@ bagaimana mendefinisikan konstruktor di java ?
         ```
 - equals
     - konsep
+        ```
+        objek yang sama dapat dibandingkan dengan menggunakan equals.
+        contoh objek1 dan objek2 adalah objek yang sama, dapat di cek menggunakan 
+        if(objek1.equals(objek2))
+        {
+            // true
+        }
+
+        akan tetapi, objek1 dan objek2 akan sama jika dilakukan penyalinan dengan benar.
+        objek1 = objek2 --> salah
+
+        untuk mengatasi hal ini dapat dilakukan dengan membuat method untuk menyalin objek ataupun dengan konstruktor yang melewatkan objek.
+        ```
     - implementasi
+        ```
+        implementasi dapat dilihat pada file Saham.java
+        ```
+- agregasi
+    - konsep
+    ```
+    agregasi terjadi ketika sebuah objek kelas merupakan bidang dari kelas lain.
+
+    terkadang kita perlu membuat objek dari objek-objek lain. analoginya sama seperti ita membuat rumah.
+    saat membuat rumah kita memerlukan objek pintu, onjek jendela, onjek lantai dan yang lainnya sehingga membentuk objek rumah.
+    ```
+    - implementasi
+    ```
+    implementasi agregasi dengan membuat objek matakuliah yang terdiri dari objek bukuText dan objek pengajar.
+    ```
+
+# Day 11 #100DaysOfCode 10-01-2020
+- melanjutkan agregasi
+    - implementasi
+    
+    - pembasahan
+
 [<< back](../readme.md)
