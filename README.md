@@ -1058,7 +1058,52 @@ bagaimana mendefinisikan konstruktor di java ?
 # Day 11 #100DaysOfCode 10-01-2020
 - melanjutkan agregasi
     - implementasi
-    
+        ```
+        implementasi dilakukan dengan membuat diagram uml terlebih dahulu, untuk memudahkan visualisasi saat membuat code program.
+        ```
+
+        ```nomnoml
+ 
+        [<abstract>MataKuliah|
+        - namaMtKuliah:String
+        - pengajar:Pengajar
+        - bukuTeks:BukuTeks|
+        + MataKuliah(nama:String, ajar:Pengajar, teks:BkuTeks):
+        + getNama : String
+        + getPengajar : Pengajar
+        + getBukuTeks : BukuTeks
+        + toString() : String
+        ] 
+        
+
+        
+        [<abstract>Pengajar|
+        - namaBelakang:String
+        - namaDepan:String
+        - nomorNIP:String|
+        + Pengajar(namaBlkg:String, namaDpn:String, nip:String):
+        + Pengajar(objek2:Pengajar) :
+        + set(namaBlkg:String, namaDpn:String, nip:String) : void
+        + toString() : String
+        ] 
+
+       
+        [<abstract>BukuTeks|
+        - judul:String
+        - pengarang:String
+        - penerbit:String|
+        + Bukuteks(jdl:String, peng:String, pen:String):
+        + BukuTeks(objek2:BukuTeks) :
+        + set(jdl:String, peng:String, pen:String) : void
+        + toString() : String
+        ]
+
+        [<start>st]
+        
+        [MataKuliah] --> [st]
+        [st] --> [Pengajar]
+        [st] --> [BukuTeks]
+        ```
     - pembasahan
 
 [<< back](../readme.md)
