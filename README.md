@@ -1104,6 +1104,9 @@ bagaimana mendefinisikan konstruktor di java ?
         [st] --> [Pengajar]
         [st] --> [BukuTeks]
         ```
+       <p align="center">
+        <img src="./img/uml-matakuliah.png">
+        </p>
     - pembasahan
 
 [<< back](../readme.md)
