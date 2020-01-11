@@ -1107,6 +1107,17 @@ bagaimana mendefinisikan konstruktor di java ?
        <p align="center">
         <img src="./img/uml-matakuliah.png">
         </p>
-    - pembasahan
 
+# Day 12 #100DaysOfCode 11-01-2020
+- Implementasi Agregasi
+    ```
+    implementasi terhadap source code dilakukan berdasarkan diagram UML.
+    berdasarkan diagram UML, tedapat 3 class file java yaitu :
+    1. Pengajar
+    2. BukuTeks
+    3. MataKuliah
+    4. MataKuliahDemo
+
+    agrerasi dapat dilihat bahwa objek BukuTeks dan Objek Pengajar digunakn untuk membentuk objek MataKuliah.
+    ```
 [<< back](../readme.md)
