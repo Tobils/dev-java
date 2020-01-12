@@ -1120,4 +1120,19 @@ bagaimana mendefinisikan konstruktor di java ?
 
     agrerasi dapat dilihat bahwa objek BukuTeks dan Objek Pengajar digunakn untuk membentuk objek MataKuliah.
     ```
+
+# Day 12 #100DaysOfCode 11-01-2020
+- hindari penggunaan referesnsi *null* 
+    - konsep
+        ```
+        secara default sebuah variable referensi yang merupakan bidang objek yang diinisialisasi dengan nilai null.
+        hal ini mengindikasikan bahwa variable tersebut tidak mereferensi objek apapun.
+        sebagai contoh : sebuah referensi null tidak dapat dipakai untuk memanggil methode. jika kita memaksakan untuk melakukan operasi dengan referensi null, maka program akan berhenti.
+        ```
+    - implementasi
+        ```
+        NamaLengkap.java
+        ```
+
+
 [<< back](../readme.md)
