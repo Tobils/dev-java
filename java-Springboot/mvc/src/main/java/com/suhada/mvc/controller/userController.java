@@ -1,6 +1,5 @@
 package com.suhada.mvc.controller;
-
-
+import com.suhada.mvc.model.namaUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +20,6 @@ public class userController
     @RequestMapping(value="/user", method=RequestMethod.POST)
     public void dataUser(@RequestParam(value = "namaDepan", defaultValue = "ade") String namaDepan, @RequestParam(value = "namaTengah", defaultValue = "suhada") String namaTengah, @RequestParam(value = "namaBelakang", defaultValue = "asfa") String namaBelakang)
     {
-        // System.out.println("POST \t /user : \n \t Nama Depan \t: " + namaDepan + "\n \t Nama Tengah \t: " + namaTengah + "\n \t Nama Belakang \t: " + namaBelakang);
         User user =  new User(namaDepan, namaTengah, namaBelakang);
         System.out.println(user);
     }
@@ -32,5 +30,12 @@ public class userController
         String data_user = "man Jadda wa jada ";
         System.out.println(data_user);
     }
-    
+
+
+    @RequestMapping(value="/namaUser", method=RequestMethod.POST)
+    public void reqPostNama(@RequestParam(value="namaUser", defaultValue="suhada") String paramNama) 
+    {
+        System.out.println("/namaUser");
+        System.out.println(paramNama);
+    }
 }

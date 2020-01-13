@@ -1179,10 +1179,16 @@ bagaimana mendefinisikan konstruktor di java ?
     - challenge
         ```
         melakukan pencarian file berdasarkan inquiry user menggunakan api.
-        - membuat List<String>
-        - menerima input user dan membelikan return ? true : false
+        - membuat List<String> Nama
+        - menerima input user berupa nama dan memberikan return ? true : false
+
+        catatan penting, cara mendefinisikan List : 
+        private List<String> listName = new ArrayList<String>();
         ```
     - implementasi
+        ```
+        implementasi pencarian berhasil dilakukan menggunakan class User, tapi ketika menggunakan class pada model masih terjadi error.
+        ```
 
 [<< back](../readme.md)
 
