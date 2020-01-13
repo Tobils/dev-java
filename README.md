@@ -1121,7 +1121,7 @@ bagaimana mendefinisikan konstruktor di java ?
     agrerasi dapat dilihat bahwa objek BukuTeks dan Objek Pengajar digunakn untuk membentuk objek MataKuliah.
     ```
 
-# Day 12 #100DaysOfCode 11-01-2020
+# Day 13 #100DaysOfCode 12-01-2020
 - hindari penggunaan referesnsi *null* 
     - konsep
         ```
@@ -1131,8 +1131,28 @@ bagaimana mendefinisikan konstruktor di java ?
         ```
     - implementasi
         ```
-        NamaLengkap.java
+        - NamaLengkap.java
+          mengolah data nama lengkap untuk digunakan oleh objek.
+
+        - NamaLengkapDemo.java
+          apabila getPanjang_null() dipanggil saat atribut class nama lengkap belum didefinsikan alamat memorynya, maka program akan berhenti alias atribut tersbut masih dalam kondisi null.
         ```
 
-
+# Day 14 #100DaysOfCode 13-01-2020
+- Springboot MVC basic
+    - konsep
+        ```
+        MVC atau Model View Controller biasa digunkan untuk membangun web.
+        - Model
+            biasanya digunakan untuk menyimpan/mengakses database. semua hal yang berkaitan dengan database dilakuakn oleh model.
+        - View 
+            biasanya digunakan sebagai tampilan dengan client. pada spring disimpan ada directory resource/static untuk file html, dan untuk file js dan css disimpan pada directory resources/templates
+        - Controller
+            biasanya digunakan sebagai pengendali request restfull api dari user. mengatur antaa model dan views.
+        ```
+    - Implementasi
+        ```
+        -Hello World MVC Spring
+        ```
 [<< back](../readme.md)
+
