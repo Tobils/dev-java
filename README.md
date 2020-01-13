@@ -1152,7 +1152,26 @@ bagaimana mendefinisikan konstruktor di java ?
         ```
     - Implementasi
         ```
-        -Hello World MVC Spring
+        -mvc spring project basic
+        pada folder /java-Springboot/mvc saya membuat project untuk mvc menggunakan spring.
+        saya menambahkan  controller/HomeController.java pada java.com.suhada.mvc. 
+        Homecontroller bertugas sebagai controller dan memberikan nilai return berupa halaman html.
+        halaman html dibuat pada directory /resources/templates/home.html. sedangkan untuk file css/js/image
+        dapat dibuat pada directory /resources/static.
+
+        - menambahkan routing untuk user
+        /user --> GET tidak memberikan nilai kembalian ke user
+        /user --> POST dengan melewatkan parameter name depan, tengah dan belakang, kemudian menampilkan data tersbut pada condole.
         ```
+    
+    - postman request
+        <p align="center">
+        <img src="./img/postman-mvc-basic.png">
+        </p>
+    - view from platform
+        <p align="center">
+        <img src="./img/spring-mvc-basic.png">
+        </p>
+
 [<< back](../readme.md)
 
