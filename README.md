@@ -1187,8 +1187,18 @@ bagaimana mendefinisikan konstruktor di java ?
         ```
     - implementasi
         ```
-        implementasi pencarian berhasil dilakukan menggunakan class User, tapi ketika menggunakan class pada model masih terjadi error.
+        implementasi pencarian berhasil dilakukan menggunakan class User, 
+        tapi ketika menggunakan class pada model masih terjadi error.
+
+        error :
+        Error resolving template [namaUser], template might not exist or might not be accessible by any of the configured Template Resolvers
+
+        belum menemukan solusi, sehingga untuk sementara data model dilakukan oleh controller.
         ```
+
+# Day 16 #100DaysOfCode 15-01-2020
+
+
 
 [<< back](../readme.md)
 

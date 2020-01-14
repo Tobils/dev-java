@@ -13,7 +13,7 @@ public class namaUser
     }
 
     /**
-     * this methode is used to set al the name list, before I use datase method.
+     * this methode is used to set al the name list, before I use datase method. 
      * @return list of name
      */
     public List<String> setNama()
@@ -29,20 +29,15 @@ public class namaUser
         return listNama;
     }
 
+
     public boolean getNama()
     {
         System.out.println(nama);
         boolean status = false;
-        
-        
         if(listNama != null)
         {
             System.out.println(listNama);    
         }
-
         return status;
     }
-
-
-
 }

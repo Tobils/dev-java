@@ -71,7 +71,6 @@ public class User
             listNama.add("aisyah");
             listNama.add("asfa");
             listNama.add("afsa");
-            System.out.println(listNama);
         } catch(Error e)
         {
             System.out.println(e);
@@ -79,16 +78,25 @@ public class User
         return true;
     }
 
-    public boolean getListNama()
+    public List<String> getListNama()
+    {
+        return listNama;
+    }
+
+
+    public boolean cekNama(String namaParam)
     {
         boolean status = false;
-        
-        
-        if(listNama != null)
+        for(int i=0; i<listNama.size(); i++)
         {
-            System.out.println(listNama);    
+            if(namaParam == listNama.get(i))
+            {
+                status = true;
+                break;
+            }
         }
 
         return status;
     }
+
 }
