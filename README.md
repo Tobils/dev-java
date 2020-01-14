@@ -1197,7 +1197,79 @@ bagaimana mendefinisikan konstruktor di java ?
         ```
 
 # Day 16 #100DaysOfCode 15-01-2020
+- Generic
+    - konsep 
+        ```
+        It would be nice if we could write a single sort method that could sort the elements in an Integer array, a String array, or an array of any type that supports ordering.
 
+        Java Generic methods and generic classes enable programmers to specify, with a single method declaration, a set of related methods, or with a single class declaration, a set of related types, respectively.
+
+        Generics also provide compile-time type safety that allows programmers to catch invalid types at compile time.
+
+        Using Java Generic concept, we might write a generic method for sorting an array of objects, then invoke the generic method with Integer arrays, Double arrays, String arrays and so on, to sort the array elements.
+        ```
+
+    - implementasi
+        ```
+        generic implementasi melibatkan methd genericm=, and class generic.
+        implementasi dilakukan untuk file :
+        GenericMethodTest.java
+        ```
+        ```java
+        /**
+         * file GenericMethodTest.java 
+         */
+         
+        public class GenericMethodTest
+        {
+            /**
+            * generic method printArray
+            * @param <E>
+            * @param inputArray
+            */
+            public static <E> void printArray( E[] inputArray)
+            {
+                /**
+                * display array element
+                */
+                for(E element : inputArray)
+                {
+                    System.out.printf("%s ", element);
+                }
+                System.out.println();
+            }
+
+            public static void main(String[] args) {
+                /**
+                * create arrays of Ineteger, Double and Char
+                */
+                Integer[] intArray = {1, 2, 3, 4, 5};
+                Double[] doubleArray = {1.1, 2.2, 3.3, 4.4, 5.5};
+                Character[] charArray = {'H', 'E', 'L', 'L', 'O'};
+
+                /**
+                * pass integer array
+                */
+                System.out.println("array intArray contains : ");
+                printArray(intArray);
+                System.out.println();
+
+                /**
+                * pass double array
+                */
+                System.out.println("array double contains : ");
+                printArray(doubleArray);
+                System.out.println();
+
+                /**
+                * pass charAray
+                */
+                System.out.println("array char contains : ");
+                printArray(charArray);
+                System.out.println();
+            }
+        }
+        ```
 
 
 [<< back](../readme.md)
