@@ -1313,5 +1313,67 @@ bagaimana mendefinisikan konstruktor di java ?
         generic dapat kita gunakan untuk method dan class yg bisa kita adjust tipe data yang akan kita gunakan, sebagaimana dapat dilihat pada file Box.java, GenericMethodTest.java dan MaximumTest.java
         ```
 
+# Day 17 #100DaysOfCode 16-01-2020
+- Getting Started Spring framework for beginner
+    ```
+    Spring framework dibangun oleh Rod Johson dan dijelaskan dalam bukunya yang berjudul “Expert One-on-One: J2EE Design and Development”.
+    framework spring menyediakan 7 module yang dapat digunakan oleh developer. 
+    developer dapat menggunakan 1 atau lebih module spring sesuai kebutuhan developer.
+    ```
+    - understanding Core
+        
+        <p align="center">
+        <img src="./img/SpringFrameworkArchitecture.jpg">
+        </p>
+
+        - Core Container
+            ```
+            Merupakan inti dari spring framework dan semua module lainnya dibangun diatas module ini. core container menyediakan
+            fitur injeksi juga diketahui sebagai control inversi (inversion of control). module ini terdiri dari beanFactory 
+            (sebuah implementasi pola factory) yang membuat dan mengatur siklus file dari berbagai objek aplikasi (dikenal sebagai bean).
+            dikonfigurasi dalam file spring bean.
+            ```
+
+        - Application Context
+            ```
+            module ini menyediakan berbagai enterprise level service internasional, scheduling (penjadwadwalan),akses JNDI, email dll. 
+            ```
+
+        - AOP
+            ```
+            module ini membantu untuk implementasi berbagai cross cutting concern pada aplikasi seperti logging, menagement transaksi dan yang lainnya.
+            bagian ini dipisahkan dari code aplikasi dan dan di injeksi ke berbagai titik potong melalui file konfigurasi.
+            ```
+
+        - Spring Web
+            ```
+            framework spring membantu dalam pengembangan web. module ini dibangun diatas conetxt module aplikasi dan menyediakan fitur berorientasi web.
+            ```
+
+        - Spring MVC
+            ```
+            framework spring MVC dibangun di atas spring module web dan membantu pengembangan web dalam pola design MVC.
+            ```
+
+        - Spring DAO
+            ```
+            Hampir semua aplikasi bisnis membutuhkan untuk berinteraksi dengan database. module Spring DAO membantu memudahkan dalam berinteraksi dengan database
+            dengan menyediakan abstraksi dari tugas-tugas level rendah dari JDBC seperti membuat koneksi dengan database, merelese database, dan sebagainya.
+            ```
+
+        - Spring ORM
+            ```
+            Memiliki berbagai mapping hubungan-objek popular seperti hibernate, iBatis, JPA etc. 
+            module Spring ORM membantu untuk berintegrasi dengan fungsi-fungsi tsb.
+            ```
+    - understanding AOP
+        ```
+        ```
+    - understanding MVC
+        ```
+        ```
+
+
+
 [<< back](../readme.md)
 
