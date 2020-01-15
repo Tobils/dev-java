@@ -1215,6 +1215,12 @@ bagaimana mendefinisikan konstruktor di java ?
         implementasi dilakukan untuk file :
         GenericMethodTest.java
         MaximumTest.java
+
+        Generic Classes
+        A generic class declaration looks like a non-generic class declaration, except that the class name is followed by a type parameter section.
+        As with generic methods, the type parameter section of a generic class can have one or more type parameters separated by commas. These classes are known as parameterized classes or parameterized types because they accept one or more parameters.
+        Box.java
+
         ```
         ```java
         /**
@@ -1271,7 +1277,41 @@ bagaimana mendefinisikan konstruktor di java ?
             }
         }
         ```
+        
+        ```java
+            /**
+             * file Box.java
+             */ 
+            public class Box<T>
+            {
+                private T t;
+                public void add(T t)
+                {
+                    this.t = t;
+                }
 
+                public T get()
+                {
+                    return t;
+                }
+
+                public static void main(String[] args) 
+                {
+                    Box<Integer> integerBox = new Box<Integer>();
+                    Box<String> stringBox = new Box<String>();
+                    
+                    integerBox.add(10);
+                    stringBox.add("man jadda wa jada");
+
+                    System.out.println("Integer valud : " + integerBox.get());
+                    System.out.println("String value : " + stringBox.get());
+                }
+            }
+            ```
+    - pembahasan
+        ```
+        generic dapat kita gunakan untuk method dan class yg bisa kita adjust tipe data yang akan kita gunakan, sebagaimana dapat dilihat pada file Box.java, GenericMethodTest.java dan MaximumTest.java
+        ```
 
 [<< back](../readme.md)
 
