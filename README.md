@@ -1366,13 +1366,126 @@ bagaimana mendefinisikan konstruktor di java ?
             Memiliki berbagai mapping hubungan-objek popular seperti hibernate, iBatis, JPA etc. 
             module Spring ORM membantu untuk berintegrasi dengan fungsi-fungsi tsb.
             ```
-    - understanding AOP
+
+# Day 18 #100DaysOfCode 17-01-2020
+- Java Serializations
+    - konsep
         ```
+        Java menyediakan sebuah mekanimse yang dikenal dengan serialisasi objek dimana sebuah objek dapat direpresentasikan sebagai sebuah urutan bytes yang terdiri
+        dari data objek sebagai sebuah informasi mengenai tipe objek dan tipe data yang disimpan di dalam objek tsb.
+        
+        setelah serialisasi objek dituliskan dalam sebuah file, kita dapat membaca file tsb dan melakukan deserialisasi dimana tipe informasi dan tipe bytes yang
+        merepresentasikan objek tsb dapat digunakan kembali untuk membuat objek di dalam memoery.
+
+        yang lebih mengesankan, JVM melakukan hal tersebut secara independen/mandiri artinya sebuah objek dapat i serialisasi pada sebuah platform dan di deserialisasi pada platform lainnya.
+
         ```
-    - understanding MVC
+    - implementasi
         ```
+        path : dev-java/java-data-structure/Java-advanced/
+        - Employee.java
+        - SerializeDemo.java
+        - DesrializeDemo.java
+        ```
+        ```java
+        // file Employee.java
+        public class Employee implements java.io.Serializable
+        {
+            public String name;
+            public String address;
+            public transient int SSN;
+            public int number;
+
+            public void mailCheck()
+            {
+                System.out.println("Mailing to "+ name + " " + address);
+            }
+        }
         ```
 
+        ```java
+        // file SerializeDemo.java
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+        import java.io.ObjectOutputStream;
+
+        public class SerializeDemo
+        {
+            public static void main(String[] args) 
+            {
+                Employee e = new Employee();
+                e.name = "Ade Suhada";
+                e.address = " Bogor, Jawa Barat";    
+                e.SSN = 063063456;
+                e.number = 1;
+
+                try
+                {
+                    FileOutputStream fileOut = new FileOutputStream("employee.ser");
+                    ObjectOutputStream out = new ObjectOutputStream(fileOut);
+                    out.writeObject(e);
+                    out.close();
+                    fileOut.close();
+                    System.out.println("data serialisasi disimpan pada employee.ser");     
+                } catch (IOException i)
+                {
+                    i.printStackTrace();
+                }
+            }
+        }
+        ```
+
+        ```java
+        // file DeserializeDemo
+        import java.io.*;
+
+        public class DeserializeDemo
+        {
+            public static void main(String[] args) 
+            {
+                Employee e = null;
+                
+                try
+                {
+                    FileInputStream filein = new FileInputStream("employee.ser");
+                    ObjectInputStream in = new ObjectInputStream(filein);
+                    e = (Employee) in.readObject();
+                    in.close();
+                    filein.close();
+                } catch (IOException i)
+                {
+                    i.printStackTrace();
+                    return;
+                } catch (ClassNotFoundException c)
+                {
+                    System.out.println("Class employee tidak ditemukan");
+                    c.printStackTrace();
+                    return;
+                }
+
+                System.out.println("Deseriliasisasi demo pada objek class employee");
+                System.out.println("Nama \t : " + e.name);
+                System.out.println("Alamat \t : " + e.address);
+                System.out.println("SSN \t : " + e.SSN);
+                System.out.println("Nomor \t : " + e.number);
+            }
+        }
+        ```
+    - pembahasan
+        ```
+        compile dan jalankan :
+        > javac SerializeDemo.java
+        > java SerializeDemo
+
+        Employee e = new Employee();
+        e.name = "Ade Suhada";
+        e.address = " Bogor, Jawa Barat";    
+        e.SSN = 063063456;
+        e.number = 1;
+
+        data yang diisi berupa data diatas, transient membuat data tidak dituliskan menjadi serial data yang dituliskan ke dalam file.
+        sehingga ketika kita jalankan file DeserializeDemo.java, hasil untuk SSN akan bernilai 0, sedangkan value objek lainnya tetap sama.
+        ```
 
 
 [<< back](../readme.md)

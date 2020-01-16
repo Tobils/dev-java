@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RegistrationController
 {
     @RequestMapping(method=RequestMethod.GET)
-    public String viewRegistration(final Map<String, Object> model)
+    public String viewRegistration(Map<String, Object> model)
     {
         User userForm = new User();
         model.put("userForm", userForm);
-
         return "Registration";
     }
+    
     
 
 }
