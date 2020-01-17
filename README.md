@@ -1487,6 +1487,33 @@ bagaimana mendefinisikan konstruktor di java ?
         sehingga ketika kita jalankan file DeserializeDemo.java, hasil untuk SSN akan bernilai 0, sedangkan value objek lainnya tetap sama.
         ```
 
+# Day 19 #100DaysOfCode 18-01-2020
+- Networking [TCP/UDP]
+    - konsep
+        ```
+        maksud dari pemrograman jaringan bermakna untuk menulis program yang di eksekusi di berbagai macam perangkat(komputer), dimana setiap 
+        perangkat saling terhubung satu sama lain menggunakan jaringan.
+
+        Paket java.net dari J2SE API terdiri dari kumpulan kelas dan antar muka yang menyediakan detail komunikasi level rendah, sehingga memungkinkan
+        kita untuk menulis program yang berfokus untuk menyelesaikan masalah dengan mudah.
+
+        Paket java.net menyediakan dukungan untuk 2 jeniah protokol jaringan yang biasa digunakan :
+            - TCP : Transmission Control Protocol, memungkinkan untuk berkomnunikasi antara 2 perangkat. 
+                    TCP digunakan hampir di semua  protokol internet, yang mereferensi ke TCP/IP.
+            - UDP : User Datagram Protocol, memungkinkan untuk mengirim paket-paket data antar aplikasi.
+
+        Pemahaman yang bagus untuk kita pelajari meliputi :
+            - Socket Programming : paling banyak digunakan dalam jaringan.
+            - URL Processing : dijelaskan secara terpisah.
+
+        Socket Programming
+        Socket menyediakan sebuah komunikasi antara 2 komputer menggunakan TCP.
+        TCP merupakan two-way protokol komunikasi yang artinya data stream dapat dikirim pada waktu yang bersamaan.
+        ```
+    - implementasi
+        ```
+        GreetingClient.java
+        ```
 
 [<< back](../readme.md)
 
