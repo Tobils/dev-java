@@ -1513,6 +1513,23 @@ bagaimana mendefinisikan konstruktor di java ?
     - implementasi
         ```
         GreetingClient.java
+        GreetingServer.java
+        ```
+
+# Day 20 #100DaysOfCode 19-01-2020
+- Enumerasi
+    - konsep
+        ```
+        Tipe data enumerasi terdiri dari nilai-nilai yang telah ditetapkan. kita dapat menggunakan tipe data ini untuk menciptakan variable, 
+        yang hanya bisa merepresentasikan nilai-nilai yang ditetapkan untuk tipe data tsb.
+
+        kadangkala, ada gunanya untuk menciptakan tipe data sendiri yang memiliki himpunan nilai spesifik. imsalnya, kita ingin menciptakan tipe data dengan nama hari, 
+        dan nilai-nilai legal untuk tipe data itu adalah nama-nama hari dalam seminggu [senin-sealasa-rabu-kamis-jum'at-sabtu-minggu].
+        ```
+    - implementasi
+        ```
+        Hari.java
+        EnumerasiDemo.java
         ```
 
 [<< back](../readme.md)
