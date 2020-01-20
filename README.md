@@ -1525,6 +1525,8 @@ bagaimana mendefinisikan konstruktor di java ?
 
         kadangkala, ada gunanya untuk menciptakan tipe data sendiri yang memiliki himpunan nilai spesifik. imsalnya, kita ingin menciptakan tipe data dengan nama hari, 
         dan nilai-nilai legal untuk tipe data itu adalah nama-nama hari dalam seminggu [senin-sealasa-rabu-kamis-jum'at-sabtu-minggu].
+
+        source : buku
         ```
     - implementasi
         ```
@@ -1532,5 +1534,20 @@ bagaimana mendefinisikan konstruktor di java ?
         EnumerasiDemo.java
         ```
 
+# Day 21 #100DaysOfCode 20-01-2020
+- Mengirim E-mail
+    - konsep
+        ```
+        mengirim email menggunakan framework springboot.
+
+        source : https://www.tutorialspoint.com/spring_boot/spring_boot_sending_email.htm
+        ```
+    - implementasi
+        ```
+        implementasi pada directory : 
+        dev-java/java-Springboot/gmail
+
+        ```
+    
 [<< back](../readme.md)
 
