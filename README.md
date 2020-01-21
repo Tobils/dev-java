@@ -1546,8 +1546,16 @@ bagaimana mendefinisikan konstruktor di java ?
         ```
         implementasi pada directory : 
         dev-java/java-Springboot/gmail
-
         ```
-    
+
+# Day 22 #100DaysOfCode 21-01-2020
+- Mengirim E-mail part #2
+    - konsep
+        ```
+        password yang digunakan merupakan password apps yang dapat digenerate melalui panduan link berikut.
+        ```
+        [link generate password app](https://support.google.com/accounts/answer/185833?p=InvalidSecondFactor)
+
+
 [<< back](../readme.md)
 
