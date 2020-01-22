@@ -1670,12 +1670,34 @@ bagaimana mendefinisikan konstruktor di java ?
             <p align="center">
             <img src="./img/gmail_succes_sent.png">
             </p>
-    
-    - set email properties
-        ```
-        pengaturan properties email mulai dari akun, password dan yang lainnya dapat kita atur di application.properties
-        ```
 
+- Challenge kirim email ke perushaan-perushaan IT di asia tenggara.
+    - konsep
+        ```
+        konsepnya seperti : https://www.youtube.com/watch?v=e8zx0-eoDLE
+        mengirim lebih ke 50.000 perusahaan. great.
+
+        tahapanannya :
+        1. cari website nya
+            -> https://clutch.co/app-developers/se-asia
+            -> https://clutch.co/id/top-service-providers?page=n
+        2. scrapping data email perusahaan
+        3. kirim email
+        ```
+    
+    - package
+        - install maven : Simply put, Maven is a command-line tool for building Java applications
+            - brew install maven
+            ```
+            Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+            Maven home: /usr/local/Cellar/maven/3.6.3/libexec
+            Java version: 11.0.5, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home
+            Default locale: en_ID, platform encoding: UTF-8
+            OS name: "mac os x", version: "10.13.6", arch: "x86_64", family: "mac"
+            ```
+    - project
+        - [scrapping](../Java-challenge/scrapping/readme.md)
+        
 
 [<< back](../readme.md)
 
