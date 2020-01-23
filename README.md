@@ -1697,7 +1697,67 @@ bagaimana mendefinisikan konstruktor di java ?
             ```
     - project
         - [scrapping](../Java-challenge/scrapping/readme.md)
-        
+
+# Day 24 #100DaysOfCode 23-01-2020
+- Day of execution mail
+    - beginning of email
+        ```
+        - social
+        - marketing
+        - hello
+        - contact
+        - support
+        - info
+        - press
+        - media
+        - team
+        - sales
+        - enquiries
+        - help
+        - business
+        - service
+        - career
+        - community
+        - opportunities
+        ```
+    - subject mail
+        ```
+        Hey Team - You are doing great, I really love what you are doing!
+        ```
+    - message
+        ```
+        Hi, 
+        My name is Suhada, I am junior sotfware engineer at start up in Yogyakarta, Indonesia. 
+
+        I just wanted to say that i'm huge fan of your company and interested with your company. 
+        I love your products and your services, your team doing great work, I would love to learn more about your company.
+
+        I was also wondering if you have any sample product or any company's swag could you send my way -
+        I'd love to try it, and would appreciate anything you could send me.
+
+        Thank you so much and have a great Day.
+
+        Sincerely yours, 
+        Suhada
+
+
+        ---------------
+        Jl. Anggajaya 2 No.105, Sanggrahan, Condongcatur, 
+        Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia
+        Post Code   : 55281
+        Whatsapp    : +6285228663237
+        ---------------
+        ```
+    - mail total : 202.113 
+
+- Mengatur Properties pada project maven
+    - konsep
+        ```
+        menyimpan nilai-nilai variabel pada sebuah properties, sehingga ketika di upload ke github, kita dapat menyembunyikan informasi tersebut.
+        info yang dimaksud adalah : alamat email dan password, serta info2 penting lainnya.
+        selanjutnya agar tidak diupload ke github, kita menambahkan item format data tersebut pada gitignore.
+        ```
+    - implementasi
 
 [<< back](../readme.md)
 

@@ -28,11 +28,11 @@ public class EmailController
         
         System.out.println("/sendmail");
         final String from = "dev.suhada@gmail.com";
-        final String password = "xxx";
+        final String password = "xwwtpwykgbhviepb";
         final String to = "dev.suhada@gmail.com";
-        final String sub = "java mail";
-        mailKind jenis_email = mailKind.FILE;
-        final String msg = "This is second java message";
+        final String sub = "Hey Team - You are doing great, I really love what you are doing!";
+        mailKind jenis_email = mailKind.TEXT;
+        final String msg = "Hi,\nMy name is Suhada, I am junior sotfware engineer at start up in Yogyakarta, Indonesia. \n\nI just wanted to say that i'm huge fan of your company and interested with your company.\nI love your products and your services, your team doing great work, I would love to learn more about your company.\n\nI was also wondering if you have any sample product or any company's swag could you send my way -\nI'd love to try it, and would appreciate anything you could send me.\n\nThank you so much and have a great Day.\n\nSincerely yours,\nSuhada\n\n---------------\nJl. Anggajaya 2 No.105, Sanggrahan, Condongcatur,\nKec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia\nPost Code   : 55281\nWhatsapp    : +6285228663237\n---------------";
         sendmail(from, password, to, sub, msg, jenis_email);
         return "Email already send !";
     }

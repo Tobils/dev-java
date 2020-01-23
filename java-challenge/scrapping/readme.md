@@ -1,4 +1,4 @@
-# Scrapping menggunakan Java dengan basic Maven
+# Scrapping menggunakan Java dengan basic Maven pada web clutch.co
 1. installasi
     * `brew install mvn` 
     * basic [link](https://www.petanikode.com/java-maven/)
@@ -67,8 +67,54 @@
                 <java.version>1.8</java.version>
             </properties>
             ```
+        - subject mail
+            ```
+            Hey Team - You are doing great, I really love what you are doing!
+            ```
+        - message mail
+            ```
+            Hi, 
+            My name is Suhada, I am junior sotfware engineer at start up in Yogyakarta, Indonesia. 
 
-        - isi email
+            I just wanted to say that i'm huge fan of your company and interested with your company. 
+            I love your products and your services, your team doing great work, I would love to learn more about your company.
+
+            I was also wondering if you have any sample product or any company's swag could you send my way -
+            I'd love to try it, and would appreciate anything you could send me.
+
+            Thank you so much and have a great Day.
+
+            Sincerely yours, 
+            Suhada
+
+
+            ---------------
+            Jl. Anggajaya 2 No.105, Sanggrahan, Condongcatur, 
+            Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia
+            Post Code   : 55281
+            Whatsapp    : +6285228663237
+            ---------------
             ```
+    
+    3. Scrapping Jilid #2 Relate to -- Day 24 #100DaysOfCode 23-01-2020
+        - scrapping mail perushaan IT di indonesia
+        - generate project
             ```
-        - 
+            mvn archetype:generate \
+            -DgroupId=com.suhada.app \
+            -DartifactId=scrappingTopWebDeveloperID \
+            -DarchetypeArtifactId=maven-archetype-quickstart \
+            -DinteractiveMode=false
+            ``` 
+        - setting properties resources
+            - make directory resources in src.main
+            - edit pom.xml 
+                ```xml
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <filtering>true</filtering>
+                    </respurce>
+                </resources>
+                ```
+        
