@@ -48,8 +48,7 @@ tag line : **Ngoding java mulai hari ini.**
 
 ## 4. Sumber belajar
 - [tutorialspoint](https://www.tutorialspoint.com/java/)
-- [Java referensi bagi Programmer](#)
-- [w3school](#)
+- [Spring framework](https://www.logicbig.com/tutorials/spring-framework.html)
 
 
 # #100DaysOfCode
@@ -1757,7 +1756,33 @@ bagaimana mendefinisikan konstruktor di java ?
         info yang dimaksud adalah : alamat email dan password, serta info2 penting lainnya.
         selanjutnya agar tidak diupload ke github, kita menambahkan item format data tersebut pada gitignore.
         ```
-    - implementasi
+
+# Day 25 #100DaysOfCode 24-01-2020
+- send mail [completed]
+- java gui part #1
+    - introduksi
+        ```
+        GUI (Graphical User Interface) membuat antarmuka pengguna.
+        Rancangan antarmuka pengguna.
+        Component <-- Container <-- JComponent <-- AbstracButton <---- JButton
+                                                |                  |-- JToggleButton <---- JCheckBox
+                                                |-- JLabel                             |-- JRadioButton
+                                                |-- JTextComponent <---- JTextArea
+                                                |-- JComboBox        |-- JTextField <-- JPasswordField
+                                                |-- JList
+                                                |-- JScrollBar
+                                                |-- JSlider
+        ```
+    - Button/Tombol
+        ```
+        Tombol merupakan suatu komponen yang memicu event aksi ketika diklik, Swing menyediakan tombol reguler, tombl toggle, tombol kotak periksa, dan tombol radio.
+        fitur tsb didefinisikan di dalam javax.swing.AbstractButton.
+        UjiIkonTombol.java
+        --> ikon press akan muncul saat button ditekan, sedangkan ikon rollover akan muncul saat mouse berada diatas tombol.
+        ```
+
+
+
 
 [<< back](../readme.md)
 

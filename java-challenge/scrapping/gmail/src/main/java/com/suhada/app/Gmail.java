@@ -18,12 +18,12 @@ import javax.mail.*;
 public class Gmail
 {
     private List<String> listOfEmail = new ArrayList<String>();
-    final String mailFrom = "";
-    final String password = "";
+    private String mailFrom;
+    private String password;
     private String subject;
     private String msg;
 
-    final String csvFile = "data_email_company_south_east.csv";
+    private String csvFile;
     final String csvSplitBy = "\n";
     String line = "";
 
@@ -35,8 +35,11 @@ public class Gmail
         System.out.println("ready to send email !");
     }
 
-    public void run(final KindOfMail mailType, final String subject, final String msg) throws javax.mail.internet.AddressException, MessagingException, IOException
+    public void run(final KindOfMail mailType, final String subject, final String msg, String csvFile, String mailFrom, String password) throws javax.mail.internet.AddressException, MessagingException, IOException
     {
+        this.mailFrom = mailFrom;
+        this.password = password;
+        this.csvFile = csvFile;
         this.subject = subject;
         this.msg = msg;
         /**
@@ -68,8 +71,9 @@ public class Gmail
             sendMail(email.toLowerCase(), mailType);
             System.out.println("counting mail : " + i);
             System.out.println("email to " + email.toLowerCase() + " has sent !");
-            System.out.println("\n\n");
+            System.out.println("\n");
         }
+        System.out.println("finish send "+ i + " mail !");
 
     }
 
