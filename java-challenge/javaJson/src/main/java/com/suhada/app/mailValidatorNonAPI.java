@@ -58,8 +58,7 @@ public class mailValidatorNonAPI
         /**
          * write file to csv and json
          */
-        writeToJSON(email_valid, list_email_valid);
-        writeToJSON(email_invalid, list_email_invalid);
+        
 
         System.out.println("finish validate email !");
     }
