@@ -160,21 +160,6 @@ public class mailChecker
         }
    }
    
-   /**
-     * write to csv file
-     * @throws IOException
-     */
-    public void writeToCSV(final String filename, final List<String> listmail) throws IOException
-    {
-        final FileWriter csvWriter = new FileWriter(filename);
-        for(final String email : listmail)
-        {
-            csvWriter.append(email);
-            csvWriter.append("\n");
-            // System.out.println(email);
-        }
-        csvWriter.flush();
-        csvWriter.close();
-    }
+   j
 
 }
