@@ -1781,6 +1781,142 @@ bagaimana mendefinisikan konstruktor di java ?
         --> ikon press akan muncul saat button ditekan, sedangkan ikon rollover akan muncul saat mouse berada diatas tombol.
         ```
 
+- mailChecker
+    - generate maven project
+        ```
+         mvn archetype:generate \
+            -DgroupId=com.suhada.app \
+            -DartifactId=mailChecker \
+            -DarchetypeArtifactId=maven-archetype-quickstart \
+            -DinteractiveMode=false
+        ```
+    - get API-KEY
+        - [link](https://gamalogic.com/#api)
+
+# Day 26 #100DaysOfCode 25-01-2020
+- mail checker without API
+    - konsep
+        ```
+        ```
+     - implementasi
+        ```
+        iplementasi dilakukan pada path : /dev-java/dev-challenge/scrapping/mailChecker
+        ```
+
+- java JSON
+    - generate maven project
+        ```
+        mvn archetype:generate \
+            -DgroupId=com.suhada.app \
+            -DartifactId=javaJson \
+            -DarchetypeArtifactId=maven-archetype-quickstart \
+            -DinteractiveMode=false
+        ```
+    - tambahkan dependensi berikut pada file pom.xml
+        ```xml
+            <!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+            <dependency>
+                <groupId>com.googlecode.json-simple</groupId>
+                <artifactId>json-simple</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+        ```
+    - install dependency :`mvn install`
+    - jika terjadi error, tambahkan properties berikut pada pom.xml
+        ```xml
+         <!-- menambahkan properties untuk solved error -->
+        <properties>
+            <maven.compiler.source>1.6</maven.compiler.source>
+            <maven.compiler.target>1.6</maven.compiler.target>
+            <java.version>1.8</java.version>
+        </properties>
+        ```
+    - konsep
+        ```
+        konsepnya adalah melakukan validasi email menggunakan API mail checker.
+        rsponse dari mail checker adalah berbentuk json.
+        berdasarkan data json tersebut, kita harus bisa menemukan informasi yang dibutuhkan, yaitu apakah email yg kita maksd valid ataukah kita.
+
+        tahapan :
+        1. memperoleh akses API pada laman : https://gamalogic.com/#api
+        2. parsing json
+        ```
+    - implementasi
+        ```
+        implementasi dilakukan pada project maven : /dev-java/dev-challenge/javaJson
+        -> membaca email pada file .csv
+        -> validasi setiap email
+        -> write email yg valid dan yang tidak valid masing-masing pada file yangberbeda
+        ```
+    - pembahasan
+        - obj1
+            ```json
+                {
+                "gamalogic_emailid_vrfy": [
+                    {
+                    "do_you_mean": false,
+                    "is_role": false,
+                    "is_unknown": false,
+                    "is_valid": true,
+                    "is_syntax_valid": true,
+                    "emailid": "mail@suhada.com",
+                    "is_catchall": false,
+                    "message": "Valid ID",
+                    "resolved_time": 0.8651,
+                    "is_disposable": false
+                    }
+                ]
+                }
+            ```
+        - obj2
+            ```json
+            [
+            {
+                "do_you_mean": false,
+                "is_role": false,
+                "is_unknown": false,
+                "is_valid": true,
+                "is_syntax_valid": true,
+                "emailid": "mail@suhada.com",
+                "is_catchall": false,
+                "message": "Valid ID",
+                "resolved_time": 0.8651,
+                "is_disposable": false
+            }
+            ]
+            ```
+        - obj3
+            ```json
+            {
+                "do_you_mean": false,
+                "is_role": false,
+                "is_unknown": false,
+                "is_valid": true,
+                "is_syntax_valid": true,
+                "emailid": "suhada@widyawicara.com",
+                "is_catchall": false,
+                "message": "Valid ID",
+                "resolved_time": 0.8651,
+                "is_disposable": false
+            }
+            ```
+        - write file to email_valid.json
+            ```json
+            {
+                "valid_mail" :
+                [
+                    {
+                        "id": 1,
+                        "mail" : "mail@mail.com"
+                    },
+                    {
+                        "id": n,
+                        "mail": "n@n.com"
+                    }
+
+                ]
+            }
+            ```
 
 
 
