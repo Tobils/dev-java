@@ -1741,10 +1741,7 @@ bagaimana mendefinisikan konstruktor di java ?
 
 
         ---------------
-        Jl. Anggajaya 2 No.105, Sanggrahan, Condongcatur, 
-        Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia
-        Post Code   : 55281
-        Whatsapp    : +6285228663237
+        alamat
         ---------------
         ```
     - mail total : 202.113 
@@ -1918,7 +1915,9 @@ bagaimana mendefinisikan konstruktor di java ?
             }
             ```
 
-
+# Day 27 #100DaysOfCode 26-01-2020
+- memisahkan email yang valid dengan yang tidak valid
+- membuat CV
 
 [<< back](../readme.md)
 

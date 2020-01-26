@@ -17,7 +17,7 @@ public class App
         System.out.println("gmail project get started !");
 
         final String mailFrom = "suhada@widyawicara.com";
-        final String password = "zumkxnezexyqeuzq";
+        final String password = "";
         final String csvFile = "./mailinglist/2_mail_list.csv";
         final KindOfMail jenis_email = KindOfMail.TEXT;
         final Gmail gmail = new Gmail();
