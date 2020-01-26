@@ -34,3 +34,4 @@ build/
 *.properties
 *.csv
 *.json
+.gitignore
