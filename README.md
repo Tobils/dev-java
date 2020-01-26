@@ -1918,6 +1918,13 @@ bagaimana mendefinisikan konstruktor di java ?
 # Day 27 #100DaysOfCode 26-01-2020
 - memisahkan email yang valid dengan yang tidak valid
 - membuat CV
+- modifikasi .gitignore [link](https://stackoverflow.com/questions/1139762/ignore-files-that-have-already-been-committed-to-a-git-repository)
+    - eidt .gitignore
+    - `git rm -r --cached .`
+    - `git add .`
+    - `git commit -m ".gitignore is now working"`
+    - `git push -u origin master`
+    - To undo `git rm --cached filename`, use `git add filename`.
 
 [<< back](../readme.md)
 
