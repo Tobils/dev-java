@@ -31,6 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
-.properties
-.csv
-.json
+*.properties
+*.csv
+*.json
