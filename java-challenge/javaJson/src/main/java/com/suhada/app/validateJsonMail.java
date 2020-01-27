@@ -45,10 +45,12 @@ public class validateJsonMail {
             try {
                 JSONObject obj2 = (JSONObject)list_mail.get(i);
                 email = obj2.get("email").toString();
-                // email = email.replace(System.getProperty("line.separator"), "");
+                email = email.replace(System.getProperty("line.separator"), "").toLowerCase();
+                System.out.println(email);
                 System.out.println( email+ " is valid? " + isAddressValid(email));
+
             } catch (Exception e) {
-                System.out.println("email " + email +" is "+e.getMessage());
+                System.out.println("email ke : "+ i +" " + email +" is "+e.getMessage());
             }
         }
       return;

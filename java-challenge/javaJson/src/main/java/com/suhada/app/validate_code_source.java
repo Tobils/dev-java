@@ -13,7 +13,7 @@ public class validate_code_source {
     {
       List<String> list_email = new ArrayList<String>();
       String testData[] = {
-         "jinujawad6s@gmail.com", 
+         "social@appguys.com", 
          "social@enterprise.affle.com",
          "tvf@tvf.cz",
          "info@ermaelan.com",
