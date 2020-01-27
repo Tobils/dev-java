@@ -1,35 +1,57 @@
 package com.suhada.app;
-import java.io.*;
-import java.net.*;
-import java.util.*; 
-import javax.naming.*; 
-import javax.naming.directory.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.List;
+
+import javax.naming.NamingEnumeration;
+import javax.naming.NamingException;
+import javax.naming.directory.Attribute;
+import javax.naming.directory.Attributes;
+import javax.naming.directory.DirContext;
+import javax.naming.directory.InitialDirContext;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  * modify code from https://chillyfacts.com/check-an-email-exist-using-java-java-email-verification-and-validation/
  */
-public class validate_code_source {
-    public static void main( final String args[] ) throws IOException
+public class validateJsonMail {
+    public static void main( final String args[] ) throws IOException, ParseException
     {
-      String testData[] = {
-         "jinujawad6s@gmail.com", 
-         "drp@drp.cz",
-         "tvf@tvf.cz",
-         "info@ermaelan.com",
-         "drp@drp.cz",
-         "begeddov@jfinity.com",
-         "vdv@dyomedea.com",
-         "me@aaronsw.com",
-         "aaron@theinfo.org",
-         "rss-dev@yahoogroups.com",
-         "tvf@tvf.cz",
-       };
-   for ( int ctr = 0 ; ctr < testData.length ; ctr++ ) {
-      System.out.println( testData[ ctr ].getClass().getName() + " is valid? " + 
-            isAddressValid( testData[ ctr ] ) );
-            System.out.println(testData[ctr].length());
-   }
-   return;
+        final List<String> list_email = new ArrayList<String>();
+
+        /**
+         * read json file
+         */
+        JSONParser parse = new JSONParser();
+        Reader reader = new FileReader("./data-mail/indonesia/data_email_company_appdev_indonesia.json");
+        JSONObject obj1 = (JSONObject)parse.parse(reader);
+        JSONArray list_mail = (JSONArray)obj1.get("alamat_email");
+        String email =  "";
+        
+        for(int i=0; i< list_mail.size(); i++)
+        {
+            try {
+                JSONObject obj2 = (JSONObject)list_mail.get(i);
+                email = obj2.get("email").toString();
+                // email = email.replace(System.getProperty("line.separator"), "");
+                System.out.println( email+ " is valid? " + isAddressValid(email));
+            } catch (Exception e) {
+                System.out.println("email " + email +" is "+e.getMessage());
+            }
+        }
+      return;
    }
          
     private static int hear( final BufferedReader in ) throws IOException {
@@ -88,7 +110,7 @@ public class validate_code_source {
       return res;
       }
       
-    public static boolean isAddressValid( final String address ) {
+    public static boolean isAddressValid(String address ) {
       // Find the separator for the domain name
       int pos = address.indexOf( '@' );
       // If the address does not contain an '@', it's not valid

@@ -25,58 +25,40 @@ public class mailValidatorNonAPI
     List<String> fileList = new ArrayList<String>();
     List<String> list_email_valid = new ArrayList<String>();
     List<String> list_email_invalid = new ArrayList<String>();
+    List<String> list_email = new ArrayList<String>();
+    private String[] alamat_email = new String[4769];
 
-    final String path = "./mail_filtered/";
-    private String email_valid = "email_valid";
-    private String email_invalid = "email_invalid";
+    final String path = "./mail-filtered/";
+    private final String email_valid = "email_valid";
+    private final String email_invalid = "email_invalid";
 
     public void run() throws IOException
     {
-        final File file = new File("/Users/dev-tobil/Documents/dev-java/dev-java/java-challenge/javaJson/mail_address/");
-        final File[] files = file.listFiles();
-
         try {
-            int count = 1;
-            int count_valid = 1;
-            int count_invalid = 1;
-            for(final File f : files) // read .csv file on directory
+            final String namafile = "./data-mail/indonesia/data_email_company_appdev_indonesia.csv"; // need to adjust enytime we use
+            final FileReader csvFile = new FileReader(namafile);
+            final BufferedReader csvReader = new BufferedReader(csvFile);
+            System.out.println("finish read " + namafile);
+
+            String row;
+            int ctr = 0;
+            while((row=csvReader.readLine()) != null)
             {
-                if(f.getName().contains("csv"))
-                {
-                    final String namafile = "./mail_address/"+f.getName();
-                    final FileReader csvFile = new FileReader(namafile);
-                    final BufferedReader csvReader = new BufferedReader(csvFile);
-                    System.out.println("finish read " + namafile);
-
-                    String row;
-                    while((row=csvReader.readLine()) != null) // read data on each file
-                    {
-                        String[] data = row.split("\n");
-                        if(isAddressValid(data[0]))
-                        {
-                            System.out.println("valid "+count_valid);
-                            list_email_valid.add(data[0]);
-                            count_valid++;
-                        } else 
-                        {
-                            System.out.println("invalid "+count_invalid);
-                            list_email_invalid.add(data[0]);
-                            count_invalid++;
-                        }
-                    }
-                    count++;
-
-                    /**
-                     * write to json file
-                     */
-                    writeToJSON(count, f.getName(), list_email_valid, email_valid);
-                    writeToJSON(count, f.getName(), list_email_invalid, email_invalid);
-
-                    System.out.println("finish validate " + count + " file !");
-
-                }
+                String[] data = row.split("\n");
+                list_email.add(data[0]);
+                ctr++;
             }
-        } catch(Exception e)
+
+            for(String mail : list_email)
+            {
+                // System.out.println( mail+ " is valid? " + 
+                // isAddressValid(mail);
+                System.out.println(mail.getClass().getName());
+                System.out.println(mail.length());
+            }
+           
+
+        } catch(final Exception e)
         {
             System.out.println(e.toString());
         }
@@ -100,29 +82,29 @@ public class mailValidatorNonAPI
         return res;
         }
   
-    private static void say( final BufferedWriter wr, final String text ) throws IOException 
-    {
+      private static void say( final BufferedWriter wr, final String text ) 
+         throws IOException {
         wr.write( text + "\r\n" );
         wr.flush();
         return;
-    }
+        }
   
-    private static ArrayList getMX( final String hostName) throws NamingException 
-    {
+      private static ArrayList getMX( final String hostName )
+            throws NamingException {
         // Perform a DNS lookup for MX records in the domain
         final Hashtable env = new Hashtable();
         env.put("java.naming.factory.initial",
                 "com.sun.jndi.dns.DnsContextFactory");
         final DirContext ictx = new InitialDirContext( env );
         Attributes attrs = ictx.getAttributes
-                                ( hostName, new String[] { "MX" });
+                              ( hostName, new String[] { "MX" });
         Attribute attr = attrs.get( "MX" );
         // if we don't have an MX record, try the machine itself
         if (( attr == null ) || ( attr.size() == 0 )) {
-            attrs = ictx.getAttributes( hostName, new String[] { "A" });
-            attr = attrs.get( "A" );
-            if( attr == null ) 
-                throw new NamingException
+          attrs = ictx.getAttributes( hostName, new String[] { "A" });
+          attr = attrs.get( "A" );
+          if( attr == null ) 
+               throw new NamingException
                         ( "No match for name '" + hostName + "'" );
         }
         // Huzzah! we have machines to try. Return them as an array list
@@ -131,16 +113,16 @@ public class mailValidatorNonAPI
         final ArrayList res = new ArrayList();
         final NamingEnumeration en = attr.getAll();
         while ( en.hasMore() ) {
-            final String x = (String) en.next();
-            final String f[] = x.split( " " );
-            if ( f[1].endsWith( "." ) ) 
-                f[1] = f[1].substring( 0, (f[1].length() - 1));
-            res.add( f[1] );
+           final String x = (String) en.next();
+           final String f[] = x.split( " " );
+           if ( f[1].endsWith( "." ) ) 
+               f[1] = f[1].substring( 0, (f[1].length() - 1));
+           res.add( f[1] );
         }
         return res;
-    }
+        }
         
-    public static boolean isAddressValid( final String address ) {
+      public static boolean isAddressValid( final String address ) {
         // Find the separator for the domain name
         int pos = address.indexOf( '@' );
         // If the address does not contain an '@', it's not valid
@@ -149,10 +131,10 @@ public class mailValidatorNonAPI
         final String domain = address.substring( ++pos );
         ArrayList mxList = null;
         try {
-            mxList = getMX( domain );
+           mxList = getMX( domain );
         } 
         catch (final NamingException ex) {
-            return false;
+           return false;
         }
         // Just because we can send mail to the domain, doesn't mean that the
         // address is valid, but if we can't, it's a sure sign that it isn't
@@ -168,9 +150,9 @@ public class mailValidatorNonAPI
                 int res;
                 final Socket skt = new Socket( (String) mxList.get( mx ), 25 );
                 final BufferedReader rdr = new BufferedReader
-                    ( new InputStreamReader( skt.getInputStream() ) );
+                   ( new InputStreamReader( skt.getInputStream() ) );
                 final BufferedWriter wtr = new BufferedWriter
-                    ( new OutputStreamWriter( skt.getOutputStream() ) );
+                   ( new OutputStreamWriter( skt.getOutputStream() ) );
                 res = hear( rdr );
                 if ( res != 220 ) throw new Exception( "Invalid header" );
                 say( wtr, "EHLO orbaker.com" );
@@ -186,26 +168,25 @@ public class mailValidatorNonAPI
                 say( wtr, "RSET" ); hear( rdr );
                 say( wtr, "QUIT" ); hear( rdr );
                 if ( res != 250 ) 
-                    throw new Exception( "Address is not valid!" );
+                   throw new Exception( "Address is not valid!" );
                 valid = true;
                 rdr.close();
                 wtr.close();
                 skt.close();
             } 
             catch (final Exception ex) {
-                // Do nothing but try next host
+              // Do nothing but try next host
             } 
             finally {
-                if ( valid ) return true;
+              if ( valid ) return true;
             }
         }
         return false;
-    }
-
+        }
     
 
     /**
-     * method untuk write file
+     * method untuk write JSON file
      * @param count_file jumlah file
      * @param file_name nama file
      * @param list_mail alamat email
@@ -213,26 +194,26 @@ public class mailValidatorNonAPI
      */
      public void writeToJSON(final int count_file, final String file_name, final List<String> list_mail, final String status)
      { 
-        JSONArray array_mail = new JSONArray();
+        final JSONArray array_mail = new JSONArray();
         int count = 1;
         for(final String em : list_mail)
         {
-            JSONObject email = new JSONObject();
+            final JSONObject email = new JSONObject();
             email.put("id", Integer.toString(count));
             email.put("email", em);
             array_mail.add(email);
             count++;
         }
 
-        JSONObject valid_mail = new JSONObject();
+        final JSONObject valid_mail = new JSONObject();
         valid_mail.put(status, array_mail);
 
         try {
-            FileWriter jsonfile = new FileWriter(path+status+"/"+Integer.toString(count_file)+"_"+file_name +".json");
+            final FileWriter jsonfile = new FileWriter(path+status+"/"+Integer.toString(count_file)+"_"+file_name +".json");
             jsonfile.write(valid_mail.toJSONString());
             jsonfile.flush();
 
-        } catch (IOException e) {
+        } catch (final IOException e) {
             e.printStackTrace();
         }
      }

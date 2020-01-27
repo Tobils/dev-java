@@ -11,9 +11,10 @@ import javax.naming.directory.*;
 public class validate_code_source {
     public static void main( final String args[] ) throws IOException
     {
+      List<String> list_email = new ArrayList<String>();
       String testData[] = {
          "jinujawad6s@gmail.com", 
-         "drp@drp.cz",
+         "social@enterprise.affle.com",
          "tvf@tvf.cz",
          "info@ermaelan.com",
          "drp@drp.cz",
@@ -24,12 +25,19 @@ public class validate_code_source {
          "rss-dev@yahoogroups.com",
          "tvf@tvf.cz",
        };
-   for ( int ctr = 0 ; ctr < testData.length ; ctr++ ) {
-      System.out.println( testData[ ctr ].getClass().getName() + " is valid? " + 
-            isAddressValid( testData[ ctr ] ) );
-            System.out.println(testData[ctr].length());
-   }
-   return;
+      for ( int ctr = 0 ; ctr < testData.length ; ctr++ ) {
+         // System.out.println( testData[ ctr ] + " is valid? " + 
+         //       isAddressValid( testData[ ctr ] ) );
+
+         list_email.add(testData[ctr]);
+      }
+
+      for(String mail : list_email)
+      {
+         System.out.println( mail+ " is valid? " + 
+               isAddressValid( mail));
+      }
+      return;
    }
          
     private static int hear( final BufferedReader in ) throws IOException {

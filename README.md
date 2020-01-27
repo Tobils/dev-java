@@ -1916,8 +1916,8 @@ bagaimana mendefinisikan konstruktor di java ?
             ```
 
 # Day 27 #100DaysOfCode 26-01-2020
-- memisahkan email yang valid dengan yang tidak valid
-- membuat CV
+- memisahkan email yang valid dengan yang tidak valid [waiiting list]
+- membuat CV [completed]
 - modifikasi .gitignore [link](https://stackoverflow.com/questions/1139762/ignore-files-that-have-already-been-committed-to-a-git-repository)
     - eidt .gitignore
     - `git rm -r --cached .`
@@ -1926,5 +1926,8 @@ bagaimana mendefinisikan konstruktor di java ?
     - `git push -u origin master`
     - To undo `git rm --cached filename`, use `git add filename`.
 
-[<< back](../readme.md)
-
+# Day 28 #100DaysOfCode 27-01-2020
+- java GUI menggunakan Tombol
+- validate email with non API
+    - facing error : `java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1`
+        - penyebabnya adalah : social@enterprise.affle.com --> memiliki 2 dot (.), sehingga arraynya lebih dr 1.
