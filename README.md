@@ -1927,7 +1927,33 @@ bagaimana mendefinisikan konstruktor di java ?
     - To undo `git rm --cached filename`, use `git add filename`.
 
 # Day 28 #100DaysOfCode 27-01-2020
-- java GUI menggunakan Tombol
 - validate email with non API
     - facing error : `java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1`
         - penyebabnya adalah : social@enterprise.affle.com --> memiliki 2 dot (.), sehingga arraynya lebih dr 1.
+
+# Day 29 #100DaysOfCode 28-01-2020
+- read json file with gmail project.
+    - konsep
+        ```
+        semua data disimpan pada file .json yang sebelumnya disimpan pada file .csv, hal ini searah dengan mataeri sebelumnya dalam memanfaatkan file json.
+        pada projects gmail, saya menambahkan file sendMultipleMail.java, file tersebut memanfaatkan file config.json yang saya buat untuk mengkonfigurasi email dan password
+        beserta dengan subject dan message yang akan digunakan.
+        ```
+
+    - format config.json
+        ```json
+        {
+            "emails_conf": [{
+                    "email": "your email",
+                    "password": "your password app"
+                }
+            ],
+            "message_conf": [{
+                    "id": 1,
+                    "sub": "your subjects",
+                    "msg": "your message"
+                }
+            
+            ]
+        }
+        ```

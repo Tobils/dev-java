@@ -1,10 +1,12 @@
 package com.suhada.app;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -16,55 +18,77 @@ import java.util.stream.Collectors;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class mailValidatorAPI
 {
-    private String api_key;
+    final static String api_key ="c8b16931745b465abf025d3e5a253ef1";
     List<String> list_email_valid = new ArrayList<String>();
     List<String> list_email_invalid = new ArrayList<String>();
-    private String endp_email = "https://gamalogic.com/emailvrf/?emailid=";
-    private String endp_apikey = "&apikey=";
-    private String url_api ;
-    private String file;
-    private boolean validate_status;
+    private static String endp_email = "https://gamalogic.com/emailvrf/?emailid=";
+    private static String endp_apikey = "&apikey=";
+    private static String url_api ;
+    private static boolean validate_status;
 
-    private String email_valid = "email_valid";
-    private String email_invalid = "email_invalid";
+    private final static String email_valid = "email_valid";
+    private final String email_invalid = "email_invalid";
 
-    public mailValidatorAPI(String api_key, String file)
-    {
-        this.api_key = api_key; 
-        this.file = file;
-    }
+    public static void main(final String[] args) throws IOException, ParseException {
 
-    public void run() throws IOException
-    {
-        final FileReader csvFile = new FileReader(file);
-        final BufferedReader csvReader = new BufferedReader(csvFile);
-        String row;
+        /**
+         * read json file
+         */
+        final JSONParser parse = new JSONParser();
+        final Reader reader = new FileReader("./data-mail/indonesia/data_email_company_appdev_indonesia.json");
+        final JSONObject obj1 = (JSONObject)parse.parse(reader);
+        final JSONArray list_mail = (JSONArray)obj1.get("alamat_email");
+        String email =  "";
+        boolean valid_return;
+        final JSONArray array_mail = new JSONArray();
+        int count = 1;
+        final String file_name = "data_email_valid_company_appdev_indonesia.json";
 
-        while((row=csvReader.readLine()) != null)
+        for(int i=0; i< list_mail.size(); i++)
         {
-            String[] data = row.split("\n");
-            if(isEmailValid(data[0]))
-            {
-                list_email_valid.add(data[0]);
-            } else 
-            {
-                list_email_invalid.add(data[0]);
+            try {
+                final JSONObject obj2 = (JSONObject)list_mail.get(i);
+                email = obj2.get("email").toString();
+                email = email.replace(System.getProperty("line.separator"), "").toLowerCase();
+                valid_return = isEmailValid(email);
+                if(valid_return)
+                {
+                    System.out.println(email + " is "+valid_return);
+                    /**
+                     * write to json
+                    */
+                    final JSONObject email_array = new JSONObject();
+                    email_array.put("id", Integer.toString(count));
+                    email_array.put("email", email);
+                    email_array.put("is_valid", valid_return);
+                    array_mail.add(email_array);
+                    count++;
+
+                    /**
+                     * write to json file
+                     */
+                    final JSONObject valid_mail = new JSONObject();
+                    valid_mail.put(email_valid, array_mail);
+
+                    final FileWriter jsonfile = new FileWriter(file_name);
+                    jsonfile.write(valid_mail.toJSONString());
+                    jsonfile.flush();
+                }
+
+            } catch (final Exception e) {
+                System.out.println("email ke : "+ i +" " + email +" is "+e.getMessage());
             }
         }
 
-        /**
-         * write file to csv and json
-         */
-        writeToJSON(email_valid, list_email_valid);
-        writeToJSON(email_invalid, list_email_invalid);
+      
 
-        System.out.println("finish validate email !");
     }
 
-    public boolean isEmailValid(String mail) throws MalformedURLException, IOException
+    public static boolean isEmailValid(final String mail) throws MalformedURLException, IOException
     {
         url_api = endp_email + mail + endp_apikey + api_key;
         final URLConnection conn = new URL(url_api).openConnection();
@@ -82,7 +106,7 @@ public class mailValidatorAPI
             System.out.println(obj3.get("emailid").toString()+" is "+is_valid);
             validate_status =  Boolean.parseBoolean(is_valid);
 
-        } catch (Exception e) {
+        } catch (final Exception e) {
             System.out.println(e.getMessage());
         }
 		return validate_status;
@@ -90,34 +114,7 @@ public class mailValidatorAPI
 
     
 
-    /**
-     * write to json file
-     */
-     public void writeToJSON(final String file_name, final List<String> list_mail)
-     { 
-        JSONArray array_mail = new JSONArray();
-        int count = 1;
-        for(final String em : list_mail)
-        {
-            JSONObject email = new JSONObject();
-            email.put("id", Integer.toString(count));
-            email.put("email", em);
-            array_mail.add(email);
-            count++;
-        }
-
-        JSONObject valid_mail = new JSONObject();
-        valid_mail.put("valid_mail", array_mail);
-
-        try {
-            FileWriter jsonfile = new FileWriter(file_name +".json");
-            jsonfile.write(valid_mail.toJSONString());
-            jsonfile.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-     }
+    
 
 
     /**

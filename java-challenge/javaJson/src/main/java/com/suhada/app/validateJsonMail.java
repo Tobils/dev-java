@@ -2,6 +2,7 @@ package com.suhada.app;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -39,6 +40,7 @@ public class validateJsonMail {
         JSONObject obj1 = (JSONObject)parse.parse(reader);
         JSONArray list_mail = (JSONArray)obj1.get("alamat_email");
         String email =  "";
+        boolean valid_return;
         
         for(int i=0; i< list_mail.size(); i++)
         {
@@ -46,13 +48,24 @@ public class validateJsonMail {
                 JSONObject obj2 = (JSONObject)list_mail.get(i);
                 email = obj2.get("email").toString();
                 email = email.replace(System.getProperty("line.separator"), "").toLowerCase();
-                System.out.println(email);
-                System.out.println( email+ " is valid? " + isAddressValid(email));
+                valid_return = isAddressValid(email);
+                if(valid_return)
+                {
+                     list_email.add(email);
+                }
+                System.out.println( email+ " is valid? " + valid_return);
 
             } catch (Exception e) {
                 System.out.println("email ke : "+ i +" " + email +" is "+e.getMessage());
             }
         }
+
+        /**
+         * write to json file
+         */
+        String file_name = "data_email_valid_company_appdev_indonesia.json";
+        writeToJSON("file_name", list_email);
+
       return;
    }
          
@@ -173,4 +186,38 @@ public class validateJsonMail {
       }
       return false;
       }
+
+      /**
+     * method untuk write JSON file
+     * @param count_file jumlah file
+     * @param file_name nama file
+     * @param list_mail alamat email
+     * @param status valid/invalid
+     */
+     public static void writeToJSON(final String file_name, final List<String> list_mail)
+     { 
+        final JSONArray array_mail = new JSONArray();
+        int count = 1;
+        for(final String em : list_mail)
+        {
+            final JSONObject email = new JSONObject();
+            email.put("id", Integer.toString(count));
+            email.put("email", em);
+            array_mail.add(email);
+            count++;
+        }
+
+        final JSONObject valid_mail = new JSONObject();
+        valid_mail.put("email_valid", array_mail);
+
+        try {
+            final FileWriter jsonfile = new FileWriter(file_name);
+            jsonfile.write(valid_mail.toJSONString());
+            jsonfile.flush();
+
+        } catch (final IOException e) {
+            e.printStackTrace();
+        }
+     }
+
 }

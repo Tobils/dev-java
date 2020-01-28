@@ -17,8 +17,8 @@ public class csvToJSON
     public static void main(final String[] args) throws IOException
     {
         List<String> list_email = new ArrayList<String>();
-        final String nama_file_csv = "./data-mail/indonesia/data_email_company_appdev_indonesia.csv";
-        final String nama_file_json = "./data-mail/indonesia/data_email_company_appdev_indonesia.json";
+        final String nama_file_csv = "./data-mail/indonesia/data_email_company_softwaredev_indonesia.csv";
+        final String nama_file_json = "./data-mail/indonesia/data_email_company_softwaredev_indonesia.json";
         csvToJSON ctj = new csvToJSON();
         list_email = ctj.csvReader(nama_file_csv);
         ctj.writeToJSON(nama_file_json, list_email);
