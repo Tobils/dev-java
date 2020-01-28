@@ -47,7 +47,6 @@ public class sendMultipleMail
          * read json file 
          * kirim email
          */
-
         JSONParser parse = new JSONParser();
         Reader reader = new FileReader("./email-valid-indo/data_email_valid_company_softwaredev_indonesia.json");
         JSONObject obj1 = (JSONObject)parse.parse(reader);
@@ -60,8 +59,6 @@ public class sendMultipleMail
             sendMail(email_to);
             System.out.println("email from " + email + " to " + email_to + " has sent !");
         }
-
-        
     }
 
 
@@ -165,5 +162,4 @@ public class sendMultipleMail
             }
         }
     }
-
 }
