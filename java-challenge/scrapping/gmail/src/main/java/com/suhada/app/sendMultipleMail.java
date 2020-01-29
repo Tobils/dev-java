@@ -48,11 +48,12 @@ public class sendMultipleMail
          * kirim email
          */
         JSONParser parse = new JSONParser();
-        Reader reader = new FileReader("./email-valid-indo/data_email_valid_company_softwaredev_indonesia.json");
+        Reader reader = new FileReader("./email-valid-indo/data_email_valid_company_itservice_indonesia.json");
         JSONObject obj1 = (JSONObject)parse.parse(reader);
         JSONArray list_mail = (JSONArray)obj1.get("email_valid");
 
-        for(int cnt=0; cnt < list_mail.size(); cnt++)
+        int max = 100; // 100 email next 101 - list_mail.size()
+        for(int cnt=0; cnt < max; cnt++)
         {
             JSONObject obj = (JSONObject)list_mail.get(cnt);
             String email_to = obj.get("email").toString();

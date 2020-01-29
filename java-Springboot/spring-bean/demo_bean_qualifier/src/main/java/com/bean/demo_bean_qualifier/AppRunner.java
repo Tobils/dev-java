@@ -19,7 +19,7 @@ public class AppRunner
     }
 
     /**
-     * tidak di eksekusi karena tidak didefinisikan
+     * tidak di eksekusi karena tidak didefinisikan di OrderServiceClient
      */
     @Bean(name = "OrderServiceB")
     public OrderService orderServiceByProvider2()
@@ -38,7 +38,7 @@ public class AppRunner
     {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppRunner.class);
         OrderServiceClient bean = context.getBean(OrderServiceClient.class);
-        bean.showPendingOrderDetails();
+        bean.showPendingOrderDetails(); // untuk service A
+        bean.showPendingOrderDetailsB(); // untuk service B
     }    
-
 }

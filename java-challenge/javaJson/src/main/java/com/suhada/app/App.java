@@ -23,7 +23,7 @@ public class App
         
         Set<String> data_email_app = new HashSet<String>();
         JSONParser parse = new JSONParser();
-        Reader reader = new FileReader("./data-mail/data_email_valid_company_appdev_indonesia_berulang.json");
+        Reader reader = new FileReader("./data-mail/data_email_valid_company_appdev_indonesia.json");
         JSONObject obj1 = (JSONObject)parse.parse(reader);
         JSONArray list_mail = (JSONArray)obj1.get("email_valid");
 

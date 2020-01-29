@@ -39,9 +39,9 @@ public class mailValidatorAPI
          * read json file
          */
         final JSONParser parse = new JSONParser();
-        final Reader reader = new FileReader("./data-mail/indonesia/data_email_company_appdev_indonesia.json");
+        final Reader reader = new FileReader("./data-mail/data_email_valid_company_appdev_indonesia.json");
         final JSONObject obj1 = (JSONObject)parse.parse(reader);
-        final JSONArray list_mail = (JSONArray)obj1.get("alamat_email");
+        final JSONArray list_mail = (JSONArray)obj1.get("email_valid");
         String email =  "";
         boolean valid_return;
         final JSONArray array_mail = new JSONArray();

@@ -1957,3 +1957,55 @@ bagaimana mendefinisikan konstruktor di java ?
             ]
         }
         ```
+
+# Day 30 #100DaysOfCode 29-01-2020
+- Bean
+    - konsep
+    ```
+    A bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container. 
+    These beans are created with the configuration metadata that you supply to the container, for example, in the form of XML definitions.
+
+    @Autowired      --> This annotation tells the Spring container where to perform dependency injection
+    @Configuration  --> used to tell the container that beans are defined
+    @Bean           --> The methods which returns bean instances are annotated with @Bean, which is another directive for the container so that it will know what objects should be registered as beans.
+    ```
+    - implementasi --> /dev-java/java-Springboot/spring-bean
+
+- getting started with java videos from youtube [link]()
+- java classpath
+    - set up compile : `javac BitSetData.java -d bin`
+    - set up compile : `javac BitSetDemo.java -d bin`
+    - run :
+        1. -cp : `java -cp bin BitSetDemo`
+        2. EXPORT : 
+            * `export CLASSPATH=bin java BitSetDemo` 
+            * `export CLASSPATH=bin` --> `java BitSetDemo`
+
+- java jodatime manually
+    - download joda time .jar [disini]()
+    - buat directory `src`, `bin` dan `package`, copy .jar jodatime ke directory packages
+    - compile : `javac -cp ./packages/joda-time-2.10.5.jar src/* -d bin/`
+    - run : `java -cp ./packages/joda-time-2.10.5.jar:bin maven_basic.src.demoJodaTime`
+    - tidak efektif karena pada project sebenarnya akan terdapat banyak file .jar
+
+- maven buildtools
+    - dependency management
+    - generate : `mvn archetype:generate`
+    - compile : `mvn package`
+    - package
+    - run : `java -cp target/suhada-1.0-SNAPSHOT.jar suhada.App`
+    - Test
+
+    - [cari lib maven](search.maven.org)
+
+- kenapa menggunakan maven ?
+    1. dependency management
+    2. ada aturan baku untuk struktur folder
+    3. portable : bisa digunakan di multi IDE dan multi platform
+
+berbagai build tools di java :
+1. Ant + Ivy
+2. Maven
+3. gradle
+
+

@@ -20,4 +20,17 @@ public class OrderServiceClient
             System.out.println(orderService.getOrderDetails(orderId));
         }
     }
+
+
+    @Autowired
+    @Qualifier("OrderServiceB")
+    private OrderService orderServiceB;
+
+    public void showPendingOrderDetailsB()
+    {
+        for(String orderId : Arrays.asList("1000", "2000", "3000"))
+        {
+            System.out.println(orderServiceB.getOrderDetails(orderId));
+        }
+    }
 }
