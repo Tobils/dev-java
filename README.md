@@ -2009,3 +2009,14 @@ berbagai build tools di java :
 3. gradle
 
 
+# Day 31 #100DaysOfCode 30-01-2020
+- Spring - Different ways of injecting dependencies
+    - generate maven project
+        ```
+        mvn archetype:generate \
+            -DgroupId=com.suhada.app \
+            -DartifactId=spring_core \
+            -DarchetypeArtifactId=maven-archetype-quickstart \
+            -DinteractiveMode=false
+        ```
+    - 

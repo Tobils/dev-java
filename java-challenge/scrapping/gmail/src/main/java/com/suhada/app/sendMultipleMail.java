@@ -53,7 +53,7 @@ public class sendMultipleMail
         JSONArray list_mail = (JSONArray)obj1.get("email_valid");
 
         int max = 100; // 100 email next 101 - list_mail.size()
-        for(int cnt=0; cnt < max; cnt++)
+        for(int cnt=101; cnt < list_mail.size(); cnt++)
         {
             JSONObject obj = (JSONObject)list_mail.get(cnt);
             String email_to = obj.get("email").toString();
