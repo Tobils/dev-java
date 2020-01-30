@@ -2010,6 +2010,8 @@ berbagai build tools di java :
 
 
 # Day 31 #100DaysOfCode 30-01-2020
+- Challenge
+    - membuat chart.js dengan data yang diambil dari database [not completed]
 - Spring - Different ways of injecting dependencies
     - generate maven project
         ```
@@ -2019,4 +2021,81 @@ berbagai build tools di java :
             -DarchetypeArtifactId=maven-archetype-quickstart \
             -DinteractiveMode=false
         ```
-    - 
+    - [detail](./java-Springboot/spring_core/readme.md)
+
+- Set-up Springboot JPA
+    - create database
+        - got error : karena MYSQL blm di running `ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)`
+        - solve : `mysql.server start`
+        - `mysql -u root -p`
+        - show database : `show databases`
+        - delete database : `drop database nama_database`
+        - `create database pelatihan;`
+        - `create user 'pelatihanuser' identified by 'ThePassword';`
+        - `grant all on pelatihan.* to 'pelatihanuser';`
+    - setelah spring diajalankan, akan diperoleh hasil berikut :
+        ```
+        mysql> show tables;
+        +---------------------+
+        | Tables_in_pelatihan |
+        +---------------------+
+        | peserta             |
+        +---------------------+
+        1 row in set (0.00 sec)
+        ```
+        - `show create table peserta \G`
+
+- resume java database mysql
+    - `pom.xml` tambahkan dependency jpa
+        ```xml
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+        ```
+    - `pom.xml` tambahkan dependency mysql
+        ```xml
+        <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+        ```
+    - `src/main/resources/application.properties` : konfigurasi koneksi database
+        ```
+        # spring.jpa.hibernate.ddl-auto=update
+        # spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/pelatihan
+        spring.datasource.url=jdbc:mysql://localhost:3306/pelatihan?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        spring.datasource.username=pelatihanuser
+        spring.datasource.password=ThePassword
+
+        spring.jpa.generate-ddl=true
+        ```
+    - Entitiy class dengan anotasi `@Entity`
+        ```java
+        package com.suhada.spring_jpa.entity;
+        import javax.persistence.Column;
+        import javax.persistence.Entity;
+        import javax.persistence.Id;
+
+        @Entity
+        public class Peserta
+        {
+            @Id
+            private String id;
+
+            @Column(nullable = false)
+            private String nama;
+
+            @Column(nullable = false, unique = true)
+            private String email;
+        }
+        ```
+    - membuat user dan password untuk terhubung dengan database
+        ```sql
+        create database pelatihan;
+        create user 'pelatihanuser' identified by 'ThePassword';
+        grant all on pelatihan.* to 'pelatihanuser';
+        ```
+
+
