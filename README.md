@@ -2097,5 +2097,87 @@ berbagai build tools di java :
         create user 'pelatihanuser' identified by 'ThePassword';
         grant all on pelatihan.* to 'pelatihanuser';
         ```
+- JPA Mapping
+    - `@OneToMany`
+    - `@ManyToOne`
+    - `@ManiToMany`
+    - melihat perubahan pembuatan table :
+        ```sql
+        mysql> show databases;
+        +--------------------+
+        | Database           |
+        +--------------------+
+        | information_schema |
+        | mysql              |
+        | pelatihan          |
+        | performance_schema |
+        | sys                |
+        +--------------------+
+
+        mysql> show tables;
+        +---------------------+
+        | Tables_in_pelatihan |
+        +---------------------+
+        | m_materi            |
+        | peserta             |
+        | peserta_pelatihan   |
+        | sesi                |
+        +---------------------+
+        4 rows in set (0.01 sec)
+                
+        mysql> use pelatihan;
+        Database changed
+
+        mysql> show create table peserta \G
+        *************************** 1. row ***************************
+            Table: peserta
+        Create Table: CREATE TABLE `peserta` (
+        `id` varchar(255) NOT NULL,
+        `email` varchar(255) NOT NULL,
+        `nama` varchar(255) NOT NULL,
+        `tanggal_lahir` date NOT NULL,
+        PRIMARY KEY (`id`),
+        UNIQUE KEY `UK_4pf6h2ver6d4igrrq6vvo4dbv` (`email`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+        1 row in set (0.00 sec)
 
 
+        mysql> show create table peserta_pelatihan \G
+        *************************** 1. row ***************************
+            Table: peserta_pelatihan
+        Create Table: CREATE TABLE `peserta_pelatihan` (
+        `id_sesi` varchar(255) NOT NULL,
+        `id_peserta` varchar(255) NOT NULL,
+        KEY `FKrqf99w12417r5aurhp7bc9qfm` (`id_peserta`),
+        KEY `FKri78q6otiq6p470s5bc2efqc0` (`id_sesi`),
+        CONSTRAINT `FKri78q6otiq6p470s5bc2efqc0` FOREIGN KEY (`id_sesi`) REFERENCES `sesi` (`id`),
+        CONSTRAINT `FKrqf99w12417r5aurhp7bc9qfm` FOREIGN KEY (`id_peserta`) REFERENCES `peserta` (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+        1 row in set (0.00 sec)
+
+
+        mysql> show create table sesi \G
+        *************************** 1. row ***************************
+            Table: sesi
+        Create Table: CREATE TABLE `sesi` (
+        `id` varchar(255) NOT NULL,
+        `mulai` date DEFAULT NULL,
+        `sampai` date DEFAULT NULL,
+        `id_materi` varchar(255) NOT NULL,
+        PRIMARY KEY (`id`),
+        KEY `FK14wd3vhfwmi3pa8aayo38rgad` (`id_materi`),
+        CONSTRAINT `FK14wd3vhfwmi3pa8aayo38rgad` FOREIGN KEY (`id_materi`) REFERENCES `m_materi` (`uuid`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+        1 row in set (0.00 sec)
+        ```
+
+# Day 32 #100DaysOfCode 31-01-2020
+- CRUD [Create, Read, Update, and Delete] dan Database Testing
+    - membuat package baru DAO [Data Access Object]
+    - java generator : [plugin java generator](https://marketplace.visualstudio.com/items?itemName=sohibe.java-generate-setters-getters)
+    - pastikan untuk ID peserta sudah digenerate menggunakan UUID.
+        ```java
+        @Id @GeneratedValue(generator = "uuid")
+        @GenericGenerator(name = "uuid", strategy = "uuid2")
+        private String id;
+        ```
