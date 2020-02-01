@@ -2097,7 +2097,7 @@ berbagai build tools di java :
         create user 'pelatihanuser' identified by 'ThePassword';
         grant all on pelatihan.* to 'pelatihanuser';
         ```
-- JPA Mapping
+- JPA [Java Persistance API] Mapping
     - `@OneToMany`
     - `@ManyToOne`
     - `@ManiToMany`
@@ -2181,3 +2181,113 @@ berbagai build tools di java :
         @GenericGenerator(name = "uuid", strategy = "uuid2")
         private String id;
         ```
+    - output Test pada mysql
+        ```sql
+        mysql> use pelatihan; select * from peserta;
+        Reading table information for completion of table and column names
+        You can turn off this feature to get a quicker startup with -A
+
+        Database changed
+        +--------------------------------------+----------------------+-------------+---------------+
+        | id                                   | email                | nama        | tanggal_lahir |
+        +--------------------------------------+----------------------+-------------+---------------+
+        | 5e83fe3f-ec5f-4fa5-bbd1-e2d048fd3936 | Peserta001@gmail.com | Peserta 001 | 2020-01-31    |
+        +--------------------------------------+----------------------+-------------+---------------+
+        1 row in set (0.00 sec)
+        ```
+    - membuat Package Test dao : `PesertaDaotest.java`
+    - error : `java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'peserta where email = 'Peserta001@gmail.com'' at line 1`
+    - solved dengan mengubah syntaq nya menjadi : `select count(*) as jumlah from peserta where email='Peserta001@gmail.com';`
+    - pastikan untuk menjalankan spring project agar table dibuatkan oleh spring saat dijalankan.
+        ```sql
+        mysql> use pelatihan;
+        Reading table information for completion of table and column names
+        You can turn off this feature to get a quicker startup with -A
+
+        Database changed
+        mysql> show tables;
+        +---------------------+
+        | Tables_in_pelatihan |
+        +---------------------+
+        | m_materi            |
+        | peserta             |
+        | peserta_pelatihan   |
+        | sesi                |
+        +---------------------+
+        4 rows in set (0.01 sec)
+        ```
+
+# Day 33 #100DaysOfCode 01-02-2020
+- CRUD [Create, Read, Update, Delete] dan Database Testing Bagian 2
+    - Testing Database dengan implementasi @After dan @Before tetapi tidak dieksekusi.
+    - mengganti @After menjadi @AfterEach dan @Before menjadi @BeforeEach [stack overflow solution](https://stackoverflow.com/questions/10580613/after-before-not-working-in-testcase)
+
+- summary
+    1. siapkan sample data
+        ```sql
+        delete from peserta;
+
+        insert into peserta (id, nama, email, tanggal_lahir)
+        values ('aa1', 'Peserta Test 001', 'peserta.test.001@gmail.com', '2011-01-01');
+
+        insert into peserta (id, nama, email, tanggal_lahir)
+        values ('aa2', 'Peserta Test 002', 'peserta.test.002@gmail.com', '2011-01-02');
+
+        insert into peserta (id, nama, email, tanggal_lahir)
+        values ('aa3', 'Peserta Test 003', 'peserta.test.003@gmail.com', '2011-01-03');
+        ```
+    2. panggil file SQL dari dalam Junit
+        ```java       
+        @SpringBootTest
+        @Sql
+        (
+            executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD,
+            scripts = "/data/peserta.sql"
+        )
+        class PesertaDaoTest {
+        ```
+        - notes : `file peserta.sql disimpan pada directory src/test/resources/data/peserta.sql`
+    3. lakukan pengetesan dalam method @Test
+        - contoh test insert
+            ```java
+            @Test
+            void testInsert() throws SQLException
+            {
+                Peserta p = new Peserta();
+                p.setNama("Peserta 001");
+                p.setEmail("Peserta001@gmail.com");
+                p.setTanggalLahir(new Date());
+                pd.save(p);	
+                
+                String sql =  "select count(*) as jumlah from peserta where email='Peserta001@gmail.com';"; 
+                Connection c = ds.getConnection();
+                ResultSet rs = c.createStatement().executeQuery(sql);
+                Assert.assertTrue(rs.next());
+
+                Long jumlahRow = rs.getLong("jumlah");
+                Assert.assertEquals(1L, jumlahRow.longValue());
+            }
+            ```
+        - contoh test selectById
+            ```java
+            @Test
+            public void testCariById()
+            {
+                Optional<Peserta> p = pd.findById("aa1");
+                Assert.assertNotNull(p);
+                Assert.assertEquals("Peserta Test 001", p.get().getNama());
+                Assert.assertEquals("peserta.test.001@gmail.com", p.get().getEmail());
+
+                Optional<Peserta> px = pd.findById("id");
+                Assert.assertNotNull(px);
+            }
+            ```
+        - contoh test select count
+            ```java
+            @Test
+            public void testHitung()
+            {
+                Long jumlah = pd.count();
+                Assert.assertEquals(3L, jumlah.longValue());
+            }
+            ```
