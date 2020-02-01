@@ -2291,3 +2291,14 @@ berbagai build tools di java :
                 Assert.assertEquals(3L, jumlah.longValue());
             }
             ```
+    4. bersihkan sisa test
+        ```java
+         @AfterEach
+        public void hapusData() throws SQLException
+        {
+            String sql = "delete from peserta where email='Peserta001@gmail.com';";
+            Connection c = ds.getConnection();
+            c.createStatement().executeUpdate(sql);
+            System.out.println("after is executed !");
+        }
+        ```
