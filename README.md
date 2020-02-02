@@ -2306,4 +2306,5 @@ berbagai build tools di java :
 # Day 34 #100DaysOfCode 02-02-2020
 * Spring Data JPA [Java Persistance API] Query 
     - membuat Dao Sesi. --> mencari sesi dengan materi tertentu
-* membuat UI/UX web tiyas menggunakan adobe XD
+    - masih error dengan Dao Sesi : `org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #3 of class path resource [data/sesi.sql]: insert into sesi (id, id_materi, mulai, sampai) values ('aa', 'aa6', '2020-02-02', '2020-02-05'); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`pelatihan`.`sesi`, CONSTRAINT `FK14wd3vhfwmi3pa8aayo38rgad` FOREIGN KEY (`id_materi`) REFERENCES `m_materi` (`id`))`
+    

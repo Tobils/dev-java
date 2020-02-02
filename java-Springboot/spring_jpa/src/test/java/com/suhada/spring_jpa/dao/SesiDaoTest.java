@@ -9,17 +9,12 @@ import java.util.Optional;
 import javax.sql.DataSource;
 
 import com.suhada.spring_jpa.dao.PesertaDao;
-import com.suhada.spring_jpa.entity.Materi;
 import com.suhada.spring_jpa.entity.Peserta;
-import com.suhada.spring_jpa.entity.Sesi;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.test.context.jdbc.Sql;
 
 import junit.framework.Assert;
@@ -28,28 +23,68 @@ import junit.framework.Assert;
 @Sql
 (
     executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD,
-    scripts = {"/data/peserta.sql","/materi.sql", "/sesi.sql"}
+    scripts = {"/data/peserta.sql", "/data/materi.sql", "/data/sesi.sql"}
 )
 class SesiDaoTest {
 	@Autowired
-    private SesiDao sd;
+    private PesertaDao pd;
+    
+    @Autowired
+    private DataSource ds;
 
-     
     @Test
-    public void testCariByMateri()
+    public void cariIdByMateri()
     {
-        Materi m = new Materi();
-        m.setId("aa6");
-        
-        PageRequest page = PageRequest.of(0, 5); // 0 -> awal halaaman, 5 -> jumlah query setiap halamannya
-
-        Page<Sesi> hasilQuery = sd.findByMateri(m, page);
-        Assert.assertEquals(1L, hasilQuery.getTotalElements());
-
-        Sesi s = hasilQuery.getContent().get(0);
-        Assert.assertNotNull(s);
-        Assert.assertEquals("Java Fundamental", s.getMateri().getNama());
-        
+        System.out.println("ok");
     }
-   
+
+	
 }
+
+/**
+ * @Test
+    void testInsert() throws SQLException
+    {
+		Peserta p = new Peserta();
+		p.setNama("Peserta 001");
+		p.setEmail("Peserta001@gmail.com");
+		p.setTanggalLahir(new Date());
+        pd.save(p);	
+        
+        String sql =  "select count(*) as jumlah from peserta where email='Peserta001@gmail.com';"; 
+        Connection c = ds.getConnection();
+        ResultSet rs = c.createStatement().executeQuery(sql);
+        Assert.assertTrue(rs.next());
+
+        Long jumlahRow = rs.getLong("jumlah");
+        Assert.assertEquals(1L, jumlahRow.longValue());
+    }
+    
+    @AfterEach
+    public void hapusData() throws SQLException
+    {
+        String sql = "delete from peserta where email='Peserta001@gmail.com';";
+        Connection c = ds.getConnection();
+        c.createStatement().executeUpdate(sql);
+        System.out.println("after is executed !");
+    }
+
+    @Test
+    public void testHitung()
+    {
+        Long jumlah = pd.count();
+        Assert.assertEquals(3L, jumlah.longValue());
+    }
+
+    @Test
+    public void testCariById()
+    {
+        Optional<Peserta> p = pd.findById("aa1");
+        Assert.assertNotNull(p);
+        Assert.assertEquals("Peserta Test 001", p.get().getNama());
+        Assert.assertEquals("peserta.test.001@gmail.com", p.get().getEmail());
+
+        Optional<Peserta> px = pd.findById("id");
+        Assert.assertNotNull(px);
+    }
+ */

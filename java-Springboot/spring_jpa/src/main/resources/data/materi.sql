@@ -9,5 +9,3 @@ values ('aa7', 'JF-002', 'Java Web');
 
 insert into materi (id, kode, nama)
 values ('aa8', 'MB-003', 'Android Fundamental');
-
-  c
