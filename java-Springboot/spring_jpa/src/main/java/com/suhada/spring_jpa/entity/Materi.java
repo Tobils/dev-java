@@ -32,4 +32,38 @@ public class Materi
         mappedBy = "materi"
         )
     private List<Sesi> daftarSesi = new ArrayList<>(); 
+
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getKode() {
+        return this.kode;
+    }
+
+    public void setKode(String kode) {
+        this.kode = kode;
+    }
+
+    public String getNama() {
+        return this.nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public List<Sesi> getDaftarSesi() {
+        return this.daftarSesi;
+    }
+
+    public void setDaftarSesi(List<Sesi> daftarSesi) {
+        this.daftarSesi = daftarSesi;
+    }
+
 }

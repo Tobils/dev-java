@@ -2293,7 +2293,7 @@ berbagai build tools di java :
             ```
     4. bersihkan sisa test
         ```java
-         @AfterEach
+        @AfterEach
         public void hapusData() throws SQLException
         {
             String sql = "delete from peserta where email='Peserta001@gmail.com';";
@@ -2302,3 +2302,8 @@ berbagai build tools di java :
             System.out.println("after is executed !");
         }
         ```
+
+# Day 34 #100DaysOfCode 02-02-2020
+* Spring Data JPA [Java Persistance API] Query 
+    - membuat Dao Sesi. --> mencari sesi dengan materi tertentu
+* membuat UI/UX web tiyas menggunakan adobe XD

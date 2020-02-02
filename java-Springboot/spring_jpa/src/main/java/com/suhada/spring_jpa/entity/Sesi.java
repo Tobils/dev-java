@@ -41,4 +41,45 @@ public class Sesi
         )
     private List<Peserta> daftarPeserta = new ArrayList<Peserta>();
 
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getMulai() {
+        return this.mulai;
+    }
+
+    public void setMulai(Date mulai) {
+        this.mulai = mulai;
+    }
+
+    public Date getSampai() {
+        return this.sampai;
+    }
+
+    public void setSampai(Date sampai) {
+        this.sampai = sampai;
+    }
+
+    public Materi getMateri() {
+        return this.materi;
+    }
+
+    public void setMateri(Materi materi) {
+        this.materi = materi;
+    }
+
+    public List<Peserta> getDaftarPeserta() {
+        return this.daftarPeserta;
+    }
+
+    public void setDaftarPeserta(List<Peserta> daftarPeserta) {
+        this.daftarPeserta = daftarPeserta;
+    }
+
 }
