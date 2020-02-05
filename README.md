@@ -2307,4 +2307,27 @@ berbagai build tools di java :
 * Spring Data JPA [Java Persistance API] Query 
     - membuat Dao Sesi. --> mencari sesi dengan materi tertentu
     - masih error dengan Dao Sesi : `org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #3 of class path resource [data/sesi.sql]: insert into sesi (id, id_materi, mulai, sampai) values ('aa', 'aa6', '2020-02-02', '2020-02-05'); nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`pelatihan`.`sesi`, CONSTRAINT `FK14wd3vhfwmi3pa8aayo38rgad` FOREIGN KEY (`id_materi`) REFERENCES `m_materi` (`id`))`
+
+# Day 35 #100DaysOfCode 03-02-2020
+* Spring Data JPA [Java Persistance API] Query
+    - notes `masih stack dengan error di hari sebelumnya`
+    - membuat page admin dan page login untuk UI/UX web yang akan diimplementasikan.
+    - file project berada pada dev-web/dev-web-design/admin-pages
+
+* membuat implementasi JWT untuk web yang akan diimplementasikan.
+    - karena sudah familiar dengan nodejs, implementasi dilakukan dengan nodejs
     
+# Day 36 #100DaysOfCode 04-02-2020
+* membuat page login form dengan authentifikasi JWT
+    - siapkan database mysql untuk user dan password
+    - implementasi dilakukan menggunakan node.js
+    - well done dengan JWT di nodejs
+    - [jwt-project](https://github.com/Tobils/nodejs-login-JWT)
+
+# Day 37 #100DaysOfCode 05-02-2020
+* JWT login part #2
+    - session, cookies dan token management
+        ```
+        management token dapat dilakukan dengan mendestroy cookies yaitu mengatur session pada cookies pada waktu last.
+        ```
+- Hari ini berhasil mengonlinekan web ke heroku. management auth sudah berhasil dilakukan, tinggal impelmentasi lebih lanjut dengan database dan dynamic table.
