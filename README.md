@@ -2331,3 +2331,10 @@ berbagai build tools di java :
         management token dapat dilakukan dengan mendestroy cookies yaitu mengatur session pada cookies pada waktu last.
         ```
 - Hari ini berhasil mengonlinekan web ke heroku. management auth sudah berhasil dilakukan, tinggal impelmentasi lebih lanjut dengan database dan dynamic table.
+
+# Day 38 #100DaysOfCode 06-02-2020
+* UI/UX web mondok implementasi menggunakan nodejs
+    - design login pages
+    - add feature edit table, insert to db
+    - upload csv file, update database and table query
+    - handling verifikasi email saat daftar akun
