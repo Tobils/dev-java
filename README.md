@@ -2323,6 +2323,7 @@ berbagai build tools di java :
     - implementasi dilakukan menggunakan node.js
     - well done dengan JWT di nodejs
     - [jwt-project](https://github.com/Tobils/nodejs-login-JWT)
+    - <a href="https://github.com/Tobils/nodejs-login-JWT">jwt</a>
 
 # Day 37 #100DaysOfCode 05-02-2020
 * JWT login part #2
